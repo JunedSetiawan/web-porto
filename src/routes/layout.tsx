@@ -5,7 +5,7 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 import Header from "~/components/starter/header/header";
 import Footer from "~/components/starter/footer/footer";
 
-export const onGet: RequestHandler = async ({ cacheControl }) => {
+export const onGet: RequestHandler = async ({ cacheControl,cookie }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.builder.io/docs/caching/
   cacheControl({
@@ -14,6 +14,10 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
     // Max once every 5 seconds, revalidate on the server to get a fresh version of this page
     maxAge: 5,
   });
+
+  if (cookie.get('theme') === null) {
+    cookie.set('theme', 'halloween', { secure: true, httpOnly: true, sameSite: 'strict', maxAge: 2592000 }); // maxAge is 30 days, you use any period of time you want
+}
 };
 
 export const useServerTimeLoader = routeLoader$(() => {
