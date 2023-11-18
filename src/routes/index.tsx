@@ -1,11 +1,11 @@
-import { component$, Slot, useStyles$ } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { DocumentHead, RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "~/components/starter/header/header";
 import Footer from "~/components/starter/footer/footer";
 
-export const onGet: RequestHandler = async ({ cacheControl,cookie }) => {
+export const onGet: RequestHandler = async ({ cacheControl, cookie }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.builder.io/docs/caching/
   cacheControl({
@@ -15,9 +15,14 @@ export const onGet: RequestHandler = async ({ cacheControl,cookie }) => {
     maxAge: 5,
   });
 
-  if (cookie.get('theme') === null) {
-    cookie.set('theme', 'halloween', { secure: true, httpOnly: true, sameSite: 'strict', maxAge: 2592000 }); // maxAge is 30 days, you use any period of time you want
-}
+  if (cookie.get("theme") === null) {
+    cookie.set("theme", "halloween", {
+      secure: true,
+      httpOnly: true,
+      sameSite: "strict",
+      maxAge: 2592000,
+    }); // maxAge is 30 days, you use any period of time you want
+  }
 };
 
 export const useServerTimeLoader = routeLoader$(() => {
@@ -39,11 +44,24 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Juned Setiawan S - Web Developer",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "Juned Setiawan Suyadi - Web Development Enthusiast",
+    },
+    {
+      name: "title",
+      content: "Juned Setiawan Suyadi",
+    },
+    {
+      name: "keywords",
+      content:
+        "Juned Setiawan, Juned Setiawan Suyadi, Web Development, Web developer, Backend Developer, Laravel Developer, Web App Developer.",
+    },
+    {
+      name: "author",
+      content: "Juned Setiawan Suyadi",
     },
   ],
 };
