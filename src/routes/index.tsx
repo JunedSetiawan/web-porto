@@ -4,6 +4,7 @@ import type { DocumentHead, RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "~/components/starter/header/header";
 import Footer from "~/components/starter/footer/footer";
+import Hero from "~/components/starter/hero/hero";
 
 export const onGet: RequestHandler = async ({ cacheControl, cookie }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -34,11 +35,13 @@ export const useServerTimeLoader = routeLoader$(() => {
 export default component$(() => {
   return (
     <>
-      <Header />
-      <main>
-        <Slot />
-      </main>
-      <Footer />
+      <div class="lg:mx-14 py-3 sm:mx-6">
+        <Header />
+        <main>
+          <Hero />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 });

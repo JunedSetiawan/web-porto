@@ -6,12 +6,7 @@ export default component$(() => {
 
   return (
     <footer>
-      <div class="container">
-        <a href="https://www.builder.io/" target="_blank">
-          <span>Made with ♡ by Builder.io</span>
-          <span>{serverTime.value.date}</span>
-        </a>
-      </div>
+      <div class="container"></div>
     </footer>
   );
 });

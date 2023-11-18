@@ -4,7 +4,7 @@ import { ThemeToggle } from "~/components/theme-toggle";
 
 export default component$(() => {
   return (
-    <header class="lg:mx-14 py-3 sm:mx-6">
+    <header>
       <div class="navbar bg-base-100 text-base-content">
         <div class="navbar-start">
           <details class="dropdown sm:hidden">
