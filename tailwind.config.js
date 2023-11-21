@@ -7,6 +7,28 @@ module.exports = {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ["halloween", "bumblebee"],
+    themes: [
+			{
+				bumblebee: {
+					...require("daisyui/src/theming/themes")["[data-theme=bumblebee]"],
+					// "secondary": "#F000B8",
+					// "secondary-focus": "#CC009C",background-color: rgb(161 161 170 / var(--tw-bg-opacity))
+					".skill-content": {
+						"background-color": "rgb(244 244 245 / var(--tw-bg-opacity))",
+					},
+
+				},
+				halloween: {
+					...require("daisyui/src/theming/themes")["[data-theme=halloween]"],
+					// secondary: "#F000B8",
+					// "secondary-focus": "#CC009C",background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+					".skill-content": {
+						"background-color": "rgb(47 47 50 / var(--tw-bg-opacity))",
+					},
+
+
+				},
+			},
+		],
   },
 };

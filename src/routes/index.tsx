@@ -6,6 +6,7 @@ import Header from "~/components/starter/header/header";
 import Footer from "~/components/starter/footer/footer";
 import Hero from "~/components/starter/hero/hero";
 import About from "~/components/starter/about/about";
+import Skill from "~/components/starter/skill/skill";
 
 export const onGet: RequestHandler = async ({ cacheControl, cookie }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -41,6 +42,7 @@ export default component$(() => {
         <main>
           <Hero />
           <About />
+          <Skill/>
         </main>
         <Footer />
       </main>
