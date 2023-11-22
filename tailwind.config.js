@@ -16,7 +16,9 @@ module.exports = {
 					".skill-content": {
 						"background-color": "rgb(244 244 245 / var(--tw-bg-opacity))",
 					},
-
+					".bg-wrap-port" : {
+						"background-color": "rgb(255 255 255 / 0.6)",
+					},
 				},
 				halloween: {
 					...require("daisyui/src/theming/themes")["[data-theme=halloween]"],
@@ -25,8 +27,9 @@ module.exports = {
 					".skill-content": {
 						"background-color": "rgb(47 47 50 / var(--tw-bg-opacity))",
 					},
-
-
+					".bg-wrap-port" : {
+						"background-color": "rgb(31 41 55 / 0.6)",
+					},
 				},
 			},
 		],
