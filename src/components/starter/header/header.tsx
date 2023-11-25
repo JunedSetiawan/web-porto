@@ -27,7 +27,7 @@ export default component$(() => {
             <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
               <li>
                 <Link
-                  href="/"
+                  href="#about"
                   class="font-semibold border-b-2 border-transparent transition-colors duration-300 transform hover:border-primary-focus"
                 >
                   About
@@ -35,7 +35,7 @@ export default component$(() => {
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="#portfolio"
                   class="font-semibold border-b-2 border-transparent transition-colors duration-300 transform hover:border-primary-focus"
                 >
                   Portfolio
@@ -53,13 +53,13 @@ export default component$(() => {
           </details>
           <div class="hidden sm:flex">
             <Link
-              href="/"
+              href="#about"
               class="font-semibold border-b-2 border-transparent transition-colors duration-300 transform hover:border-primary-focus mx-1.5 sm:mx-6"
             >
               About
             </Link>
             <Link
-              href="/"
+              href="#portfolio"
               class="font-semibold border-b-2 border-transparent transition-colors duration-300 transform hover:border-primary-focus mx-1.5 sm:mx-6"
             >
               Portfolio

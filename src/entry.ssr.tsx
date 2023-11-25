@@ -18,19 +18,20 @@ import { manifest } from "@qwik-client-manifest";
 import Root from "./root";
 
 export default function (opts: RenderToStreamOptions) {
+  // here we access the server data
+  const { serverData } = opts;
+  // create a variable to be used to create a class based on the cookie value
+  let themeClass;
 
-   // here we access the server data
-   const { serverData } = opts;
-   // create a variable to be used to create a class based on the cookie value
-   let themeClass;
-
-   // if the theme cookie exists, we get its value and set the themeClass variable 
-   if ((serverData as any).qwikcity?.ev?.cookie?.get('theme')?.value !== undefined) {
-       themeClass = (serverData as any).qwikcity.ev.cookie.get('theme').value;
-   } else {
-       // if it does not exist we set a default theme, I am choosing light here
-       themeClass = 'halloween';
-   }
+  // if the theme cookie exists, we get its value and set the themeClass variable
+  if (
+    (serverData as any).qwikcity?.ev?.cookie?.get("theme")?.value !== undefined
+  ) {
+    themeClass = (serverData as any).qwikcity.ev.cookie.get("theme").value;
+  } else {
+    // if it does not exist we set a default theme, I am choosing light here
+    themeClass = "halloween";
+  }
 
   return renderToStream(<Root />, {
     manifest,
@@ -38,7 +39,8 @@ export default function (opts: RenderToStreamOptions) {
     // Use container attributes to set attributes on the html tag.
     containerAttributes: {
       lang: "en-us",
-      'data-theme': `${themeClass}`,
+      class: "scroll-smooth",
+      "data-theme": `${themeClass}`,
       ...opts.containerAttributes,
     },
   });
