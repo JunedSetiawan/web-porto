@@ -1,5 +1,6 @@
 import ImgProfile from "~/media/profile.png?jsx";
 import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
@@ -20,7 +21,7 @@ export default component$(() => {
             </div>
             <div class="flex flex-col items-center md:flex-row">
               <button class="btn btn-outline btn-warning border-2">
-                Contact Me
+                <Link href="#contact">Contact Me</Link>
               </button>
             </div>
           </div>

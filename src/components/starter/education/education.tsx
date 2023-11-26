@@ -17,7 +17,7 @@ export default component$(() => {
                     SMK Negeri 1 Jenangan Ponorogo{" "}
                   </h3>
                   <time class="text-xs tracki uppercase">
-                    July 2019 June 2022
+                    July 2019 - June 2022
                   </time>
                   <p class="mt-3">Software Engineering</p>
                 </div>
@@ -25,7 +25,9 @@ export default component$(() => {
                   <h3 class="text-xl font-semibold tracki">
                     Politeknik Elektronika Surabaya
                   </h3>
-                  <time class="text-xs tracki uppercase">August 2022 Now</time>
+                  <time class="text-xs tracki uppercase">
+                    August 2022 - Now
+                  </time>
                   <p class="mt-3">Associate Degree Informatics Engineering</p>
                 </div>
               </div>

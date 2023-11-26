@@ -9,6 +9,7 @@ import About from "~/components/starter/about/about";
 import Skill from "~/components/starter/skill/skill";
 import Portfolio from "~/components/starter/portfolio/portfolio";
 import Education from "~/components/starter/education/education";
+import Contact from "~/components/starter/contact/contact";
 
 export const onGet: RequestHandler = async ({ cacheControl, cookie }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -30,11 +31,11 @@ export const onGet: RequestHandler = async ({ cacheControl, cookie }) => {
   }
 };
 
-export const useServerTimeLoader = routeLoader$(() => {
-  return {
-    date: new Date().toISOString(),
-  };
-});
+// export const useServerTimeLoader = routeLoader$(() => {
+//   return {
+//     date: new Date().getFullYear(),
+//   };
+// });
 
 export default component$(() => {
   return (
@@ -47,6 +48,7 @@ export default component$(() => {
           <Education />
           <Skill />
           <Portfolio />
+          <Contact />
         </main>
         <Footer />
       </main>

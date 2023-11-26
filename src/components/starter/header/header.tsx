@@ -43,7 +43,7 @@ export default component$(() => {
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="#contact"
                   class="font-semibold border-b-2 border-transparent transition-colors duration-300 transform hover:border-primary-focus"
                 >
                   Contact
@@ -65,7 +65,7 @@ export default component$(() => {
               Portfolio
             </Link>
             <Link
-              href="/"
+              href="#contact"
               class="font-semibold border-b-2 border-transparent transition-colors duration-300 transform hover:border-primary-focus mx-1.5 sm:mx-6"
             >
               Contact
