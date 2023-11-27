@@ -28,6 +28,7 @@ export default component$(() => {
           <div class="relative lg:w-1/2 lg:my-0 my-5">
             <ImgProfile
               class="w-full h-64 rounded-2xl sm:object-contain shadow-sm sm:h-96"
+              loading="lazy"
               alt="Juned Setiawan S"
             />
           </div>
