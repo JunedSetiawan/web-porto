@@ -1,4 +1,11 @@
 import { component$ } from "@builder.io/qwik";
+import Modal from "~/components/modal";
+import Zeralight from "~/media/pr-image/zeralight.png?jsx";
+import Zeradark from "~/media/pr-image/zeradark.png?jsx";
+import Zeralogin from "~/media/pr-image/Zeralogin.png?jsx";
+import Zeraprofile from "~/media/pr-image/zeraprofile.png?jsx";
+import Zerafitur from "~/media/pr-image/zerafitur.png?jsx";
+import Dashsurvei from "~/media/pr-image/dashsurvei.png?jsx";
 
 export default component$(() => {
   return (
@@ -9,49 +16,59 @@ export default component$(() => {
             Portfolio
           </h1>
 
-          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 lg:grid-cols-3">
-            <div
-              class="flex items-end overflow-hidden bg-cover rounded-lg h-80"
-              style="background-image:url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')"
-            >
-              <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-wrap-port">
-                <h2 class="mt-4 text-xl font-semibold capitalize">
-                  Best website collections
-                </h2>
-              </div>
+          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-2">
+            <div>
+              <Zeralight
+                class="b-cover object-cover w-full rounded-lg h-64"
+                alt=""
+              />
+              <h2 class="mt-4 text-xl font-semibold">
+                <Modal id="1">
+                  <div q:slot="header">Starter Template Dashboard Laravel</div>
+                  <span q:slot="title">Zera Dashboard Laravel</span>
+                  <span q:slot="content">
+                    <span class="font-normal text-md my-2">
+                      <span>
+                        - The Open Source Starter Template Dashboard for Laravel
+                        uses the splade package and the Daisy UI Component. This
+                        template has several components and an attractive
+                        dashboard design with several helpers to make it easier
+                        to develop applications and documentation to make it
+                        easier to use with the help of my colleagues.
+                      </span>
+                      <br />
+                      <span class="text-center flex justify-center font-semibold my-4">
+                        Screenshoot
+                      </span>
+                      <span class="grid grid-cols-1 gap-6 place-items-center">
+                        login
+                        <Zeralogin />
+                        light mode
+                        <Zeralight />
+                        dark mode
+                        <Zeradark />
+                        profile
+                        <Zeraprofile />
+                        component & helper
+                        <Zerafitur />
+                      </span>
+                    </span>
+                  </span>
+                </Modal>
+              </h2>
             </div>
-
-            <div
-              class="flex items-end overflow-hidden bg-cover rounded-lg h-80"
-              style="background-image:url('https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80')"
-            >
-              <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-wrap-port">
-                <h2 class="mt-4 text-xl font-semibold capitalize">
-                  Block of Ui kit collections
-                </h2>
-              </div>
-            </div>
-
-            <div
-              class="flex items-end overflow-hidden bg-cover rounded-lg h-80"
-              style="background-image:url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')"
-            >
-              <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-wrap-port">
-                <h2 class="mt-4 text-xl font-semibold capitalize">
-                  Ton’s of mobile mockup
-                </h2>
-              </div>
-            </div>
-
-            <div
-              class="flex items-end overflow-hidden bg-cover rounded-lg h-80"
-              style="background-image:url('https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')"
-            >
-              <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-wrap-port">
-                <h2 class="mt-4 text-xl font-semibold capitalize">
-                  Huge collection of animation
-                </h2>
-              </div>
+            <div>
+              <Dashsurvei
+                class="b-cover object-cover w-full rounded-lg h-64"
+                alt=""
+              />
+              <h2 class="mt-4 text-xl font-semibold">
+                <Modal id="2">
+                  <div q:slot="header">Information System Survei</div>
+                  <span q:slot="title">Information System Survei</span>
+                  <span q:slot="content">hello</span>
+                </Modal>
+              </h2>
             </div>
           </div>
         </div>
