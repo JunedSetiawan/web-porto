@@ -15,7 +15,7 @@ import FiturSurvei3 from "~/media/pr-image/fitur3survei.png?jsx";
 export default component$(() => {
   return (
     <section id="portfolio">
-      <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-16">
+      <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-16 mb-4 md:mb-10">
         <div class="container px-6 py-10 mx-auto">
           <h1 class="text-2xl font-semibold text-center capitalize lg:text-3xl">
             Portfolio
@@ -25,7 +25,7 @@ export default component$(() => {
             <div>
               <Zeralight
                 loading="lazy"
-                class="b-cover object-cover w-full rounded-lg h-64"
+                class="b-cover object-cover w-full rounded-lg h-64 shadow"
                 alt=""
               />
               <h2 class="mt-4 text-xl font-semibold">
@@ -65,7 +65,7 @@ export default component$(() => {
             </div>
             <div>
               <Dashsurvei
-                class="b-cover object-cover w-full rounded-lg h-64"
+                class="b-cover object-cover w-full rounded-lg h-64 shadow"
                 alt=""
                 loading="lazy"
               />
