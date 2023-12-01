@@ -18,6 +18,11 @@ export default component$((props: ModalProps) => {
       </button>
       <dialog id={`my_modal_${props.id}`} class="modal">
         <div class="modal-box w-11/12 max-w-5xl">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
           <h3 class="font-bold text-lg mb-3 text-primary">
             <Slot name="title" />
           </h3>
