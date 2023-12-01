@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import Modal from "~/components/modal";
 import Zeralight from "~/media/pr-image/zeralight.png?jsx";
 import Zeradark from "~/media/pr-image/zeradark.png?jsx";
-import Zeralogin from "~/media/pr-image/Zeralogin.png?jsx";
+import Zeralogin from "~/media/pr-image/zeralogin.png?jsx";
 import Zeraprofile from "~/media/pr-image/zeraprofile.png?jsx";
 import Zerafitur from "~/media/pr-image/zerafitur.png?jsx";
 import Dashsurvei from "~/media/pr-image/dashsurvei.png?jsx";
