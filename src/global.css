@@ -6,6 +6,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .steps-vertical .step:before {
+    @apply h-60
+  }
+   
+}
+    @layer components {
+   .steps-horizontal .step:before {
+     @apply w-96
+   }
+ }
+
 /**
  * WHAT IS THIS FILE?
  *

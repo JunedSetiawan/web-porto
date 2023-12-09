@@ -1,39 +1,118 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
+import { Tab, TabList, TabPanel, Tabs } from "@qwik-ui/headless";
 import Achievement from "../achievement/achievement";
 
 export default component$(() => {
+  const selectedIndexSig = useSignal(0);
   return (
     <section id="education">
       <div class="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full mt-6 lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-16">
-        <div class="grid gap-20 sm:gap-4 sm:grid-cols-2">
-          <div>
-            <div class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-primary-focus">
-              <h3 class="text-3xl font-semibold">Education</h3>
-            </div>
-            <div class="relative px-4 space-y-6">
-              <div class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-neutral-content">
-                <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-primary-focus">
-                  <h3 class="text-xl font-semibold tracki">
-                    SMK Negeri 1 Jenangan Ponorogo{" "}
-                  </h3>
-                  <time class="text-xs tracki uppercase">
-                    July 2019 - June 2022
-                  </time>
-                  <p class="mt-3">Software Engineering</p>
-                </div>
-                <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-primary-focus">
-                  <h3 class="text-xl font-semibold tracki">
-                    Politeknik Elektronika Surabaya
-                  </h3>
-                  <time class="text-xs tracki uppercase">
-                    August 2022 - Now
-                  </time>
-                  <p class="mt-3">Associate Degree Informatics Engineering</p>
+        <div class="tabs-example mr-auto">
+          <Tabs
+            behavior="manual"
+            onSelectedIndexChange$={(index: number) => {
+              selectedIndexSig.value = index;
+            }}
+          >
+            <TabList class="flex justify-center space-y-4  mx-5 sm:mx-0 space-x-0 md:space-y-0 md:space-x-6 md:flex-row flex-col">
+              <Tab
+                class={`font-semibold text-md shadow-xl hover:shadow-base-200 p-4 ${
+                  selectedIndexSig.value === 0
+                    ? "border-b-4 border-primary"
+                    : ""
+                }`}
+              >
+                Education
+              </Tab>
+              <Tab
+                class={`font-semibold text-md shadow-xl hover:shadow-base-200 p-4 ${
+                  selectedIndexSig.value === 1
+                    ? "border-b-4 border-primary"
+                    : ""
+                }`}
+              >
+                Achievement
+              </Tab>
+              <Tab
+                class={`font-semibold text-md shadow-xl hover:shadow-base-200 p-4 ${
+                  selectedIndexSig.value === 2
+                    ? "border-b-4 border-primary"
+                    : ""
+                }`}
+              >
+                Certificate
+              </Tab>
+            </TabList>
+            <TabPanel class="mt-10">
+              <div class="flex justify-center items-center space-y-5 flex-col">
+                <div class="relative px-3">
+                  <ul class="steps steps-vertical lg:steps-horizontal">
+                    <li data-content="●" class="step step-primary">
+                      <div class="flex items-center flex-col space-y-3">
+                        <h3 class="text-xl font-semibold tracki">
+                          SMK Negeri 1 Jenangan Ponorogo{" "}
+                        </h3>
+                        <time class="text-xs tracki uppercase">
+                          July 2019 - June 2022
+                        </time>
+                        <p>Software Engineering</p>
+                      </div>
+                    </li>
+                    <li data-content="●" class="step step-primary">
+                      <div class="flex items-center flex-col space-y-3">
+                        <h3 class="text-xl font-semibold tracki">
+                          Politeknik Elektronika Surabaya
+                        </h3>
+                        <time class="text-xs tracki uppercase">
+                          August 2022 - Now
+                        </time>
+                        <p class="mt-3">
+                          Associate Degree Informatics Engineering
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-          </div>
-          <Achievement />
+            </TabPanel>
+            <TabPanel class="mt-10">
+              <Achievement />
+            </TabPanel>
+            <TabPanel class="mt-10">
+              <div class="flex justify-center items-center space-y-5 flex-col">
+                <div class="relative px-3">
+                  <ul class="menu bg-base-100 w-96 rounded-box space-y-3">
+                    <li class="shadow-lg">
+                      <Link
+                        href="https://drive.google.com/drive/folders/1ReMLP1LAa3V2hc1PEaTqRGm6YdPkFvrv"
+                        target="_blank"
+                        class="flex flex-col"
+                      >
+                        <h1 class="text-lg font-semibold text-primary">
+                          Competency Test Certificate 2022
+                        </h1>
+                        <p>with the title "Very Competent"</p>
+                      </Link>
+                    </li>
+                    <li class="shadow-lg">
+                      <Link
+                        href="https://drive.google.com/drive/folders/1ReMLP1LAa3V2hc1PEaTqRGm6YdPkFvrv"
+                        target="_blank"
+                        class="flex flex-col"
+                      >
+                        <h1 class="text-lg font-semibold text-primary text-center">
+                          Sertifikat Kegiatan Kamp Kreatif SMK Indonesia (KKSI)
+                          2021
+                        </h1>
+                        <p>with a "good reputation"</p>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </TabPanel>
+          </Tabs>
         </div>
       </div>
     </section>
