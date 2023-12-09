@@ -110,7 +110,7 @@ export default component$(() => {
                 loading="lazy"
               />
               <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="2">
+                <Modal id="3">
                   <div q:slot="header">Simple Ecommerce</div>
                   <span q:slot="title">Simple Ecommerce (Coming Soon)</span>
                   <span q:slot="content">
@@ -127,7 +127,7 @@ export default component$(() => {
                 loading="lazy"
               />
               <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="2">
+                <Modal id="4">
                   <div q:slot="header">Blog News Splade</div>
                   <span q:slot="title">Blog News Splade (WIP)</span>
                   <span q:slot="content">
@@ -144,7 +144,7 @@ export default component$(() => {
                 loading="lazy"
               />
               <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="2">
+                <Modal id="5">
                   <div q:slot="header">Web Automation</div>
                   <span q:slot="title">Web Automation (Coming Soon)</span>
                   <span q:slot="content">
@@ -161,7 +161,7 @@ export default component$(() => {
                 loading="lazy"
               />
               <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="2">
+                <Modal id="6">
                   <div q:slot="header">Prewire Starter Template</div>
                   <span q:slot="title">
                     Prewire Starter Template (Coming Soon)
