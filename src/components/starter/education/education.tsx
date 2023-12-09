@@ -1,46 +1,22 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { Tab, TabList, TabPanel, Tabs } from "@qwik-ui/headless";
 import Achievement from "../achievement/achievement";
 
 export default component$(() => {
-  const selectedIndexSig = useSignal(0);
   return (
     <section id="education">
       <div class="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full mt-6 lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-16">
         <div class="tabs-example mr-auto">
-          <Tabs
-            behavior="manual"
-            onSelectedIndexChange$={(index: number) => {
-              selectedIndexSig.value = index;
-            }}
-          >
+          <Tabs behavior="manual">
             <TabList class="flex justify-center space-y-4  mx-5 sm:mx-0 space-x-0 md:space-y-0 md:space-x-6 md:flex-row flex-col">
-              <Tab
-                class={`font-semibold text-md shadow-xl hover:shadow-base-200 p-4 ${
-                  selectedIndexSig.value === 0
-                    ? "border-b-4 border-primary"
-                    : ""
-                }`}
-              >
+              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 p-4">
                 Education
               </Tab>
-              <Tab
-                class={`font-semibold text-md shadow-xl hover:shadow-base-200 p-4 ${
-                  selectedIndexSig.value === 1
-                    ? "border-b-4 border-primary"
-                    : ""
-                }`}
-              >
+              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 p-4">
                 Achievement
               </Tab>
-              <Tab
-                class={`font-semibold text-md shadow-xl hover:shadow-base-200 p-4 ${
-                  selectedIndexSig.value === 2
-                    ? "border-b-4 border-primary"
-                    : ""
-                }`}
-              >
+              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 p-4">
                 Certificate
               </Tab>
             </TabList>
@@ -102,7 +78,7 @@ export default component$(() => {
                         class="flex flex-col"
                       >
                         <h1 class="text-lg font-semibold text-primary text-center">
-                          Sertifikat Kegiatan Kamp Kreatif SMK Indonesia (KKSI)
+                          Certificate Kegiatan Kamp Kreatif SMK Indonesia (KKSI)
                           2021
                         </h1>
                         <p>with a "good reputation"</p>
