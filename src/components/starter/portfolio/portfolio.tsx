@@ -5,12 +5,27 @@ import Zeradark from "~/media/pr-image/zeradark.png?jsx";
 import Zeralogin from "~/media/pr-image/zeralogin.png?jsx";
 import Zeraprofile from "~/media/pr-image/zeraprofile.png?jsx";
 import Zerafitur from "~/media/pr-image/zerafitur.png?jsx";
+
+// dashsurvei
 import Dashsurvei from "~/media/pr-image/dashsurvei.png?jsx";
 import LoginSurvei from "~/media/pr-image/loginsurvei.png?jsx";
 import FormSurvei from "~/media/pr-image/formsurvei.png?jsx";
 import FiturSurvei from "~/media/pr-image/fitursurvei.png?jsx";
 import FiturSurvei2 from "~/media/pr-image/fitur2survei.png?jsx";
 import FiturSurvei3 from "~/media/pr-image/fitur3survei.png?jsx";
+
+// blog splade
+import HomePage from "~/media/blog-splade/homepage.png?jsx";
+import PostPage from "~/media/blog-splade/postpage.png?jsx";
+import CategoryPage from "~/media/blog-splade/categorypage.png?jsx";
+import PersonalPage from "~/media/blog-splade/personalpage.png?jsx";
+import SavedPost from "~/media/blog-splade/savedpost.png?jsx";
+import ShowPage1 from "~/media/blog-splade/showpage1.png?jsx";
+import ShowPage2 from "~/media/blog-splade/showpage2.png?jsx";
+import DashboardPosts from "~/media/blog-splade/dashboardposts.png?jsx";
+import DashboardUser from "~/media/blog-splade/dashboarduser.png?jsx";
+import DashboardReport from "~/media/blog-splade/dashboardreport.png?jsx";
+import DashboardAccept from "~/media/blog-splade/dashboardaccept.png?jsx";
 
 export default component$(() => {
   return (
@@ -104,18 +119,49 @@ export default component$(() => {
               </h2>
             </div>
             <div>
-              <Dashsurvei
+              <HomePage
                 class="b-cover object-cover w-full rounded-lg h-64 shadow"
                 alt=""
                 loading="lazy"
               />
               <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="3">
-                  <div q:slot="header">Simple Ecommerce</div>
-                  <span q:slot="title">Simple Ecommerce (Coming Soon)</span>
+                <Modal id="4">
+                  <div q:slot="header">Blog News Splade</div>
+                  <span q:slot="title">Blog News Splade</span>
                   <span q:slot="content">
-                    Coming Soon ?
+                    a SPA website to publish news posts or blogs with various
+                    features by slicing designs from several website references.
+                    The features are Search posts, post filters, post category
+                    filters, post likes and comments, post reports. All features
+                    work well with good RBAC
                     <br />
+                    <span class="text-center flex justify-center font-semibold my-4">
+                      Screenshoot
+                    </span>
+                    <span class="grid grid-cols-1 gap-6 place-items-center">
+                      Home Page
+                      <HomePage loading="lazy" />
+                      Post Page
+                      <PostPage loading="lazy" />
+                      Category Page
+                      <CategoryPage loading="lazy" />
+                      Personal Page
+                      <PersonalPage loading="lazy" />
+                      Saved Post Page
+                      <SavedPost loading="lazy" />
+                      Show Page 1
+                      <ShowPage1 loading="lazy" />
+                      Show Page 2
+                      <ShowPage2 loading="lazy" />
+                      Dashboard Posts
+                      <DashboardPosts loading="lazy" />
+                      Dashboard User
+                      <DashboardUser loading="lazy" />
+                      Dashboard Report
+                      <DashboardReport loading="lazy" />
+                      Accept takedown post
+                      <DashboardAccept loading="lazy" />
+                    </span>
                   </span>
                 </Modal>
               </h2>
@@ -127,11 +173,11 @@ export default component$(() => {
                 loading="lazy"
               />
               <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="4">
-                  <div q:slot="header">Blog News Splade</div>
-                  <span q:slot="title">Blog News Splade (WIP)</span>
+                <Modal id="3">
+                  <div q:slot="header">Simple Ecommerce</div>
+                  <span q:slot="title">Simple Ecommerce (Coming Soon)</span>
                   <span q:slot="content">
-                    WIP
+                    Coming Soon ?
                     <br />
                   </span>
                 </Modal>
