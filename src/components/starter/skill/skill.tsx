@@ -4,7 +4,6 @@ import Html from "~/media/html.svg?jsx";
 import Css from "~/media/css.svg?jsx";
 import Bootstrap from "~/media/bootstrap.svg?jsx";
 import Expressjs from "~/media/expressjs.svg?jsx";
-import Fastify from "~/media/fastify.svg?jsx";
 import Git from "~/media/git.svg?jsx";
 import Javascript from "~/media/javascript.svg?jsx";
 import Jquery from "~/media/jquery.svg?jsx";
@@ -94,12 +93,6 @@ export default component$(() => {
             <Expressjs class="object-cover w-18 h-18 sm:w-24 sm:h-24" alt="" />
 
             <h1 class="mt-4 text-xl font-semibold capitalize ">Expressjs</h1>
-          </div>
-
-          <div class="skill-content shadow-lg flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl hover:border-transparent group hover:bg-primary-focus">
-            <Fastify class="object-cover w-16 h-16 sm:w-24 sm:h-24" alt="" />
-
-            <h1 class="mt-4 text-xl font-semibold capitalize ">Fastify</h1>
           </div>
 
           <div class="skill-content shadow-lg flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl hover:border-transparent group hover:bg-primary-focus">
