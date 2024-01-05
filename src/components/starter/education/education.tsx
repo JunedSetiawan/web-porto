@@ -59,7 +59,7 @@ export default component$(() => {
               <div class="flex justify-center items-center space-y-5 flex-col">
                 <div class="relative px-3">
                   <ul class="menu bg-base-100 w-96 rounded-box space-y-3">
-                    <li class="shadow-lg">
+                    <li class="shadow-md">
                       <Link
                         href="https://drive.google.com/drive/folders/1ReMLP1LAa3V2hc1PEaTqRGm6YdPkFvrv"
                         target="_blank"
@@ -71,7 +71,7 @@ export default component$(() => {
                         <p>with the title "Very Competent"</p>
                       </Link>
                     </li>
-                    <li class="shadow-lg">
+                    <li class="shadow-md">
                       <Link
                         href="https://drive.google.com/drive/folders/1ReMLP1LAa3V2hc1PEaTqRGm6YdPkFvrv"
                         target="_blank"

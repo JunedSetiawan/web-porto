@@ -26,6 +26,7 @@ import DashboardPosts from "~/media/blog-splade/dashboardposts.png?jsx";
 import DashboardUser from "~/media/blog-splade/dashboarduser.png?jsx";
 import DashboardReport from "~/media/blog-splade/dashboardreport.png?jsx";
 import DashboardAccept from "~/media/blog-splade/dashboardaccept.png?jsx";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
@@ -167,18 +168,28 @@ export default component$(() => {
               </h2>
             </div>
             <div>
-              <Dashsurvei
+              <Zeralogin
                 class="b-cover object-cover w-full rounded-lg h-64 shadow"
                 alt=""
                 loading="lazy"
               />
               <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="3">
-                  <div q:slot="header">Simple Ecommerce</div>
-                  <span q:slot="title">Simple Ecommerce (Coming Soon)</span>
+                <Modal id="5">
+                  <div q:slot="header">System Inventory App</div>
+                  <span q:slot="title">System Inventory App(Simple)</span>
                   <span q:slot="content">
-                    Coming Soon ?
+                    Website for inventory management, purchasing, sales, and
+                    manager with RBAC running well
                     <br />
+                    <br />
+                    Source Code{" "}
+                    <Link
+                      href="https://github.com/JunedSetiawan/inventori-app"
+                      target="_blank"
+                      class="underline text-primary"
+                    >
+                      Here
+                    </Link>
                   </span>
                 </Modal>
               </h2>
@@ -190,9 +201,9 @@ export default component$(() => {
                 loading="lazy"
               />
               <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="5">
-                  <div q:slot="header">Web Automation</div>
-                  <span q:slot="title">Web Automation (Coming Soon)</span>
+                <Modal id="3">
+                  <div q:slot="header">Simple Ecommerce</div>
+                  <span q:slot="title">Simple Ecommerce (Coming Soon)</span>
                   <span q:slot="content">
                     Coming Soon ?
                     <br />
