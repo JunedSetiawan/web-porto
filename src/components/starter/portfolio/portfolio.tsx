@@ -202,10 +202,10 @@ export default component$(() => {
               />
               <h2 class="mt-4 text-xl font-semibold">
                 <Modal id="3">
-                  <div q:slot="header">Simple Ecommerce</div>
-                  <span q:slot="title">Simple Ecommerce (Coming Soon)</span>
+                  <div q:slot="header">Simple Ecommerce (WIP)</div>
+                  <span q:slot="title">Simple Ecommerce (WIP)</span>
                   <span q:slot="content">
-                    Coming Soon ?
+                    WIP (2 week+)
                     <br />
                   </span>
                 </Modal>
