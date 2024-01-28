@@ -202,8 +202,8 @@ export default component$(() => {
               />
               <h2 class="mt-4 text-xl font-semibold">
                 <Modal id="3">
-                  <div q:slot="header">Simple Ecommerce (WIP)</div>
-                  <span q:slot="title">Simple Ecommerce (WIP)</span>
+                  <div q:slot="header">E-SPP App</div>
+                  <span q:slot="title">E-spp application (WIP)</span>
                   <span q:slot="content">
                     WIP (2 week+)
                     <br />
