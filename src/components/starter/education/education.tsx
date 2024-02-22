@@ -10,13 +10,13 @@ export default component$(() => {
         <div class="tabs-example mr-auto">
           <Tabs behavior="manual">
             <TabList class="flex justify-center space-y-4  mx-5 sm:mx-0 space-x-0 md:space-y-0 md:space-x-6 md:flex-row flex-col">
-              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 p-4">
+              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 bg-base-100 p-4">
                 Education
               </Tab>
-              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 p-4">
+              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 bg-base-100 p-4">
                 Achievement
               </Tab>
-              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 p-4">
+              <Tab class="font-semibold text-md shadow-xl hover:shadow-base-200 bg-base-100 p-4">
                 Certificate
               </Tab>
             </TabList>
