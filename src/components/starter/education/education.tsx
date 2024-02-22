@@ -38,7 +38,7 @@ export default component$(() => {
                     <li data-content="●" class="step step-primary">
                       <div class="flex items-center flex-col space-y-3">
                         <h3 class="text-xl font-semibold tracki">
-                          Politeknik Elektronika Surabaya
+                          Politeknik Elektronika Negeri Surabaya
                         </h3>
                         <time class="text-xs tracki uppercase">
                           August 2022 - Now
