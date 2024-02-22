@@ -74,7 +74,9 @@ export default component$(() => {
           <div class="skill-content shadow-lg flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl hover:border-transparent group hover:bg-primary-focus">
             <Livewire class="object-cover w-16 h-16 sm:w-24 sm:h-24" alt="" />
 
-            <h1 class="mt-4 text-xl font-semibold capitalize ">Livewire</h1>
+            <h1 class="mt-4 text-xl font-semibold capitalize ">
+              Livewire (basic)
+            </h1>
           </div>
 
           <div class="skill-content shadow-lg flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl hover:border-transparent group hover:bg-primary-focus">
@@ -86,19 +88,25 @@ export default component$(() => {
           <div class="skill-content shadow-lg flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl hover:border-transparent group hover:bg-primary-focus">
             <Reactjs class="object-cover w-18 h-18 sm:w-24 sm:h-24" alt="" />
 
-            <h1 class="mt-4 text-xl font-semibold capitalize ">Reactjs</h1>
+            <h1 class="mt-4 text-xl font-semibold capitalize ">
+              React / Next Js (basic)
+            </h1>
           </div>
 
           <div class="skill-content shadow-lg flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl hover:border-transparent group hover:bg-primary-focus">
             <Expressjs class="object-cover w-18 h-18 sm:w-24 sm:h-24" alt="" />
 
-            <h1 class="mt-4 text-xl font-semibold capitalize ">Expressjs</h1>
+            <h1 class="mt-4 text-xl font-semibold capitalize ">
+              Expressjs (Basic)
+            </h1>
           </div>
 
           <div class="skill-content shadow-lg flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl hover:border-transparent group hover:bg-primary-focus">
             <Prisma class="object-cover w-16 h-16 sm:w-24 sm:h-24" alt="" />
 
-            <h1 class="mt-4 text-xl font-semibold capitalize ">Prisma</h1>
+            <h1 class="mt-4 text-xl font-semibold capitalize ">
+              Prisma (basic)
+            </h1>
           </div>
 
           <div class="skill-content shadow-lg flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer rounded-xl hover:border-transparent group hover:bg-primary-focus">

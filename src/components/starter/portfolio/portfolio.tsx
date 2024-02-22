@@ -202,8 +202,8 @@ export default component$(() => {
               />
               <h2 class="mt-4 text-xl font-semibold">
                 <Modal id="3">
-                  <div q:slot="header">E-SPP App</div>
-                  <span q:slot="title">E-spp application (WIP)</span>
+                  <div q:slot="header">E-commerce</div>
+                  <span q:slot="title">E-commerce (WIP)</span>
                   <span q:slot="content">
                     WIP (2 week+)
                     <br />
@@ -224,7 +224,7 @@ export default component$(() => {
                     Prewire Starter Template (Coming Soon)
                   </span>
                   <span q:slot="content">
-                    Coming Soon ?
+                    Change library (?)
                     <br />
                   </span>
                 </Modal>

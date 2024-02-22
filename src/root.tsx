@@ -25,7 +25,7 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
-      <body class="bg-base-100">
+      <body class="inset-0 h-full w-full bg-base-100 bg-[radial-gradient(#555555_1px,transparent_1px)] [background-size:16px_16px]">
         <RouterOutlet />
       </body>
     </QwikCityProvider>
