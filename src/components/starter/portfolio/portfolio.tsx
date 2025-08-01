@@ -29,210 +29,363 @@ import DashboardAccept from "~/media/blog-splade/dashboardaccept.png?jsx";
 import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  return (
-    <section id="portfolio">
-      <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-16 mb-4 md:mb-10">
-        <div class="container px-6 py-10 mx-auto">
-          <h1 class="text-2xl font-semibold text-center capitalize lg:text-3xl">
-            Portfolio
-          </h1>
+  const projects = [
+    {
+      id: "1",
+      title: "Zera Dashboard Laravel",
+      subtitle: "Starter Template Dashboard Laravel",
+      image: Zeralight,
+      category: "Web Application",
+      tech: ["Laravel", "Splade", "DaisyUI", "MySQL"],
+      status: "Completed",
+      description:
+        "The Open Source Starter Template Dashboard for Laravel uses the splade package and the Daisy UI Component. This template has several components and an attractive dashboard design with several helpers to make it easier to develop applications and documentation to make it easier to use with the help of my colleagues.",
+      screenshots: [
+        { component: Zeralogin, title: "Login Page" },
+        { component: Zeralight, title: "Light Mode" },
+        { component: Zeradark, title: "Dark Mode" },
+        { component: Zeraprofile, title: "Profile Page" },
+        { component: Zerafitur, title: "Components & Helper" },
+      ],
+      links: {
+        github: "https://github.com/JunedSetiawan/zera-dashboard",
+        demo: "#",
+      },
+    },
+    {
+      id: "2",
+      title: "Information System Survey",
+      subtitle: "Survey Management System",
+      image: Dashsurvei,
+      category: "Information System",
+      tech: ["Laravel", "MySQL", "Bootstrap", "Chart.js"],
+      status: "Completed",
+      description:
+        "This information system is to facilitate the management of surveys that have been filled in by applicants who go to the investment office, who previously used the Google form to fill out surveys. In this information system there are filters to handle surveys in the form of date ranges, checkboxes for answers from applicants, etc. and also has an export feature for daily or weekly reports.",
+      screenshots: [
+        { component: FormSurvei, title: "Form Survey" },
+        { component: LoginSurvei, title: "Login Page" },
+        { component: Dashsurvei, title: "Dashboard Page" },
+        { component: FiturSurvei, title: "User Management" },
+        { component: FiturSurvei2, title: "Summary Count Survey Page" },
+        { component: FiturSurvei3, title: "Report Filter Page" },
+      ],
+    },
+    {
+      id: "4",
+      title: "Blog News Splade",
+      subtitle: "News & Blog Platform",
+      image: HomePage,
+      category: "Content Management",
+      tech: ["Laravel", "Splade", "MySQL", "Tailwind CSS"],
+      status: "Completed",
+      description:
+        "A SPA website to publish news posts or blogs with various features by slicing designs from several website references. The features are Search posts, post filters, post category filters, post likes and comments, post reports. All features work well with good RBAC.",
+      screenshots: [
+        { component: HomePage, title: "Home Page" },
+        { component: PostPage, title: "Post Page" },
+        { component: CategoryPage, title: "Category Page" },
+        { component: PersonalPage, title: "Personal Page" },
+        { component: SavedPost, title: "Saved Post Page" },
+        { component: ShowPage1, title: "Show Page 1" },
+        { component: ShowPage2, title: "Show Page 2" },
+        { component: DashboardPosts, title: "Dashboard Posts" },
+        { component: DashboardUser, title: "Dashboard User" },
+        { component: DashboardReport, title: "Dashboard Report" },
+        { component: DashboardAccept, title: "Accept takedown post" },
+      ],
+    },
+    {
+      id: "5",
+      title: "System Inventory App",
+      subtitle: "Inventory Management System",
+      image: Zeralogin,
+      category: "Business Application",
+      tech: ["Laravel", "MySQL", "Bootstrap", "Chart.js"],
+      status: "Completed",
+      description:
+        "Website for inventory management, purchasing, sales, and manager with RBAC running well",
+      links: {
+        github: "https://github.com/JunedSetiawan/inventori-app",
+      },
+    },
+    {
+      id: "3",
+      title: "E-commerce Platform",
+      subtitle: "Modern E-commerce Solution",
+      image: Dashsurvei,
+      category: "E-commerce",
+      tech: ["Laravel", "Vue.js", "MySQL", "Stripe"],
+      status: "Work in Progress",
+      description:
+        "A modern e-commerce platform with advanced features including product management, order processing, payment integration, and comprehensive admin dashboard.",
+      estimatedCompletion: "2 weeks+",
+    },
+    {
+      id: "6",
+      title: "Prewire Starter Template",
+      subtitle: "Next-Gen Starter Template",
+      image: Dashsurvei,
+      category: "Template",
+      tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind"],
+      status: "Coming Soon",
+      description:
+        "A modern starter template with enhanced features and improved developer experience, focusing on performance and scalability.",
+    },
+  ];
 
-          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-2">
-            <div>
-              <Zeralight
-                loading="lazy"
-                class="b-cover object-cover w-full rounded-lg h-64 shadow"
-                alt=""
-              />
-              <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="1">
-                  <div q:slot="header">Starter Template Dashboard Laravel</div>
-                  <span q:slot="title">Zera Dashboard Laravel</span>
-                  <span q:slot="content">
-                    <span class="font-normal text-md my-2">
-                      <span>
-                        The Open Source Starter Template Dashboard for Laravel
-                        uses the splade package and the Daisy UI Component. This
-                        template has several components and an attractive
-                        dashboard design with several helpers to make it easier
-                        to develop applications and documentation to make it
-                        easier to use with the help of my colleagues.
+  return (
+    <span id="portfolio" class="relative py-0 overflow-hidden block">
+      <span class="absolute inset-0 -z-10">
+        <span class="absolute top-1/4 right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></span>
+        <span class="absolute bottom-1/4 left-10 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></span>
+      </span>
+
+      <span class="section-padding block">
+        <span class="max-w-7xl mx-auto block">
+          <span class="text-center mb-16 block">
+            <span class="inline-block mb-4">
+              <span class="px-4 py-2 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20">
+                My Work
+              </span>
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+              Featured <span class="gradient-text">Projects</span>
+            </h2>
+            <span class="text-lg text-base-content/70 max-w-2xl mx-auto mb-8 block">
+              A showcase of my recent projects demonstrating expertise in
+              full-stack development, modern web technologies, and user-centered
+              design principles.
+            </span>
+            <span class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full block"></span>
+          </span>
+
+          <span class="grid lg:grid-cols-2 gap-8 mb-16">
+            {projects.map((project, index) => {
+              const ImageComponent = project.image;
+              return (
+                <span
+                  key={project.id}
+                  class="portfolio-card card-hover block"
+                  style={`animation-delay: ${index * 150}ms`}
+                >
+                  <span class="relative overflow-hidden block">
+                    <ImageComponent
+                      loading="lazy"
+                      class="w-full h-64 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                      alt={project.title}
+                    />
+
+                    <span class="absolute inset-0 bg-gradient-to-t from-base-300/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+                    <span class="absolute top-4 right-4">
+                      <span
+                        class={`px-3 py-1 rounded-full text-xs font-medium ${
+                          project.status === "Completed"
+                            ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                            : project.status === "Work in Progress"
+                            ? "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400"
+                            : "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+                        }`}
+                      >
+                        {project.status}
                       </span>
-                      <br />
-                      <span class="text-center flex justify-center font-semibold my-4">
-                        Screenshoot
-                      </span>
-                      <span class="grid grid-cols-1 gap-6 place-items-center">
-                        login
-                        <Zeralogin loading="lazy" />
-                        light mode
-                        <Zeralight loading="lazy" />
-                        dark mode
-                        <Zeradark loading="lazy" />
-                        profile
-                        <Zeraprofile loading="lazy" />
-                        component & helper
-                        <Zerafitur loading="lazy" />
+                    </span>
+
+                    <span class="absolute top-4 left-4">
+                      <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium backdrop-blur-sm border border-primary/30">
+                        {project.category}
                       </span>
                     </span>
                   </span>
-                </Modal>
-              </h2>
-            </div>
-            <div>
-              <Dashsurvei
-                class="b-cover object-cover w-full rounded-lg h-64 shadow"
-                alt=""
-                loading="lazy"
-              />
-              <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="2">
-                  <div q:slot="header">Information System Survei</div>
-                  <span q:slot="title">Information System Survei</span>
-                  <span q:slot="content">
-                    This information system is to facilitate the management of
-                    surveys that have been filled in by applicants who go to the
-                    investment office, who previously used the Google form to
-                    fill out surveys.In this information system there are
-                    filters to handle surveys in the form of date ranges,
-                    checkboxes for answers from applicants, etc. and also has an
-                    export feature for daily or weekly reports.
-                    <br />
-                    <span class="text-center flex justify-center font-semibold my-4">
-                      Screenshoot
+
+                  <span class="p-6 space-y-4 block">
+                    <span class="block">
+                      <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      <span class="text-sm text-base-content/60 mt-1 block">
+                        {project.subtitle}
+                      </span>
                     </span>
-                    <span class="grid grid-cols-1 gap-6 place-items-center">
-                      Form Survei
-                      <FormSurvei loading="lazy" />
-                      Login Page
-                      <LoginSurvei loading="lazy" />
-                      Dashboard Page
-                      <Dashsurvei loading="lazy" />
-                      User Management
-                      <FiturSurvei loading="lazy" />
-                      Summary Count Survei Page
-                      <FiturSurvei2 loading="lazy" />
-                      Report Filter Page
-                      <FiturSurvei3 loading="lazy" />
+
+                    <span class="text-base-content/70 text-sm leading-relaxed line-clamp-3 block">
+                      {project.description}
+                    </span>
+
+                    <span class="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          class="px-2 py-1 bg-base-200 text-base-content/80 rounded text-xs font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </span>
+
+                    <span class="flex gap-3 pt-2">
+                      <Modal id={project.id}>
+                        <span q:slot="header">{project.subtitle}</span>
+                        <span q:slot="title">
+                          <button class="btn btn-primary btn-sm flex-1">
+                            <svg
+                              class="w-4 h-4 mr-2"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                              />
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                              />
+                            </svg>
+                            View Details
+                          </button>
+                        </span>
+                        <span q:slot="content">
+                          <span class="space-y-6 block">
+                            <span class="text-base-content/80 block">
+                              {project.description}
+                            </span>
+
+                            {project.estimatedCompletion && (
+                              <span class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg border border-orange-200 dark:border-orange-800 block">
+                                <span class="text-orange-700 dark:text-orange-400 text-sm block">
+                                  <strong>Estimated Completion:</strong>{" "}
+                                  {project.estimatedCompletion}
+                                </span>
+                              </span>
+                            )}
+
+                            {project.screenshots && (
+                              <span class="block">
+                                <span class="font-semibold mb-4 text-center">
+                                  Screenshots
+                                </span>
+                                <span class="grid grid-cols-1 gap-6 place-items-center">
+                                  {project.screenshots.map((screenshot) => {
+                                    const ScreenshotComponent =
+                                      screenshot.component;
+                                    return (
+                                      <span
+                                        key={screenshot.title}
+                                        class="text-center block"
+                                      >
+                                        <span class="text-sm font-medium mb-2 block">
+                                          {screenshot.title}
+                                        </span>
+                                        <ScreenshotComponent
+                                          loading="lazy"
+                                          class="rounded-lg shadow-md max-w-full h-auto"
+                                        />
+                                      </span>
+                                    );
+                                  })}
+                                </span>
+                              </span>
+                            )}
+
+                            {project.links && (
+                              <span class="flex gap-3 pt-4 border-t border-base-300">
+                                {project.links.github && (
+                                  <Link
+                                    href={project.links.github}
+                                    target="_blank"
+                                    class="btn btn-outline btn-sm"
+                                  >
+                                    <svg
+                                      class="w-4 h-4 mr-2"
+                                      fill="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
+                                    Source Code
+                                  </Link>
+                                )}
+                                {project.links.demo && (
+                                  <Link
+                                    href={project.links.demo}
+                                    target="_blank"
+                                    class="btn btn-primary btn-sm"
+                                  >
+                                    <svg
+                                      class="w-4 h-4 mr-2"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                      />
+                                    </svg>
+                                    Live Demo
+                                  </Link>
+                                )}
+                              </span>
+                            )}
+                          </span>
+                        </span>
+                      </Modal>
+
+                      {project.links?.github && (
+                        <Link
+                          href={project.links.github}
+                          target="_blank"
+                          class="btn btn-outline btn-sm"
+                        >
+                          <svg
+                            class="w-4 h-4"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                          </svg>
+                        </Link>
+                      )}
                     </span>
                   </span>
-                </Modal>
-              </h2>
-            </div>
-            <div>
-              <HomePage
-                class="b-cover object-cover w-full rounded-lg h-64 shadow"
-                alt=""
-                loading="lazy"
-              />
-              <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="4">
-                  <div q:slot="header">Blog News Splade</div>
-                  <span q:slot="title">Blog News Splade</span>
-                  <span q:slot="content">
-                    a SPA website to publish news posts or blogs with various
-                    features by slicing designs from several website references.
-                    The features are Search posts, post filters, post category
-                    filters, post likes and comments, post reports. All features
-                    work well with good RBAC
-                    <br />
-                    <span class="text-center flex justify-center font-semibold my-4">
-                      Screenshoot
-                    </span>
-                    <span class="grid grid-cols-1 gap-6 place-items-center">
-                      Home Page
-                      <HomePage loading="lazy" />
-                      Post Page
-                      <PostPage loading="lazy" />
-                      Category Page
-                      <CategoryPage loading="lazy" />
-                      Personal Page
-                      <PersonalPage loading="lazy" />
-                      Saved Post Page
-                      <SavedPost loading="lazy" />
-                      Show Page 1
-                      <ShowPage1 loading="lazy" />
-                      Show Page 2
-                      <ShowPage2 loading="lazy" />
-                      Dashboard Posts
-                      <DashboardPosts loading="lazy" />
-                      Dashboard User
-                      <DashboardUser loading="lazy" />
-                      Dashboard Report
-                      <DashboardReport loading="lazy" />
-                      Accept takedown post
-                      <DashboardAccept loading="lazy" />
-                    </span>
-                  </span>
-                </Modal>
-              </h2>
-            </div>
-            <div>
-              <Zeralogin
-                class="b-cover object-cover w-full rounded-lg h-64 shadow"
-                alt=""
-                loading="lazy"
-              />
-              <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="5">
-                  <div q:slot="header">System Inventory App</div>
-                  <span q:slot="title">System Inventory App(Simple)</span>
-                  <span q:slot="content">
-                    Website for inventory management, purchasing, sales, and
-                    manager with RBAC running well
-                    <br />
-                    <br />
-                    Source Code{" "}
-                    <Link
-                      href="https://github.com/JunedSetiawan/inventori-app"
-                      target="_blank"
-                      class="underline text-primary"
-                    >
-                      Here
-                    </Link>
-                  </span>
-                </Modal>
-              </h2>
-            </div>
-            <div>
-              <Dashsurvei
-                class="b-cover object-cover w-full rounded-lg h-64 shadow"
-                alt=""
-                loading="lazy"
-              />
-              <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="3">
-                  <div q:slot="header">E-commerce</div>
-                  <span q:slot="title">E-commerce (WIP)</span>
-                  <span q:slot="content">
-                    WIP (2 week+)
-                    <br />
-                  </span>
-                </Modal>
-              </h2>
-            </div>
-            <div>
-              <Dashsurvei
-                class="b-cover object-cover w-full rounded-lg h-64 shadow"
-                alt=""
-                loading="lazy"
-              />
-              <h2 class="mt-4 text-xl font-semibold">
-                <Modal id="6">
-                  <div q:slot="header">Prewire Starter Template</div>
-                  <span q:slot="title">
-                    Prewire Starter Template (Coming Soon)
-                  </span>
-                  <span q:slot="content">
-                    Change library (?)
-                    <br />
-                  </span>
-                </Modal>
-              </h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                </span>
+              );
+            })}
+          </span>
+
+          <span class="text-center block">
+            <span class="glass-card p-8 max-w-2xl mx-auto block">
+              <h3 class="text-2xl font-bold mb-4">Interested in My Work?</h3>
+              <span class="text-base-content/70 mb-6 block">
+                I'm always working on new projects and exploring cutting-edge
+                technologies. Let's discuss how we can collaborate on your next
+                big idea.
+              </span>
+              <span class="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="#contact" class="btn btn-primary">
+                  Start a Project
+                </Link>
+                <Link
+                  href="https://github.com/JunedSetiawan"
+                  target="_blank"
+                  class="btn btn-outline"
+                >
+                  View All Projects
+                </Link>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>
+    </span>
   );
 });

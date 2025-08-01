@@ -38,6 +38,7 @@ export default component$(() => {
       level: "Expert",
     },
     { icon: Laravel, name: "Laravel", category: "Backend", level: "Expert" },
+    { icon: Livewire, name: "Livewire", category: "Framework", level: "Basic" },
     {
       icon: Nodejs,
       name: "Node.js",
@@ -50,35 +51,15 @@ export default component$(() => {
       category: "Backend",
       level: "Basic",
     },
-    {
-      icon: Javascript,
-      name: "AdonisJS",
-      category: "Backend",
-      level: "Intermediate",
-    },
-    {
-      icon: Javascript,
-      name: "Next.js",
-      category: "Frontend",
-      level: "Intermediate",
-    },
-    {
-      icon: Javascript,
-      name: "Refine.dev",
-      category: "Framework",
-      level: "Basic",
-    },
     { icon: Mysql, name: "MySQL", category: "Database", level: "Advanced" },
-    {
-      icon: Mysql,
-      name: "PostgreSQL",
-      category: "Database",
-      level: "Intermediate",
-    },
     { icon: Prisma, name: "Prisma", category: "Database", level: "Basic" },
     { icon: Git, name: "Git", category: "Tools", level: "Advanced" },
-    { icon: Git, name: "Postman", category: "Tools", level: "Advanced" },
-    { icon: Git, name: "Insomnia", category: "Tools", level: "Intermediate" },
+    {
+      icon: Reactjs,
+      name: "React/Next.js",
+      category: "Frontend",
+      level: "Basic",
+    },
   ];
 
   const categories = [
@@ -144,7 +125,10 @@ export default component$(() => {
                   <div class="flex justify-center mb-4">
                     <div class="relative">
                       <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300 group-hover:scale-110">
-                        <IconComponent class="w-10 h-10 text-base-content group-hover:text-primary transition-colors duration-300" />
+                        <IconComponent
+                          class="w-10 h-10 text-base-content group-hover:text-primary transition-colors duration-300"
+                          alt=""
+                        />
                       </div>
 
                       {/* Skill level indicator */}

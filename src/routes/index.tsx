@@ -40,18 +40,18 @@ export const onGet: RequestHandler = async ({ cacheControl, cookie }) => {
 export default component$(() => {
   return (
     <>
-      <main class="lg:mx-14 py-3 sm:mx-6">
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <Education />
-          <Skill />
-          <Portfolio />
-          <Contact />
-        </main>
-        <Footer />
+      <Header />
+      <main class="pt-16">
+        {" "}
+        {/* Add padding-top to account for fixed header */}
+        <Hero />
+        <About />
+        <Education />
+        <Skill />
+        <Portfolio />
+        <Contact />
       </main>
+      <Footer />
     </>
   );
 });
