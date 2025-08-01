@@ -8,10 +8,8 @@ import Git from "~/media/git.svg?jsx";
 import Javascript from "~/media/javascript.svg?jsx";
 import Jquery from "~/media/jquery.svg?jsx";
 import Laravel from "~/media/laravel.svg?jsx";
-import Livewire from "~/media/livewire.svg?jsx";
 import Mysql from "~/media/mysql.svg?jsx";
 import Nodejs from "~/media/nodejs.svg?jsx";
-import Reactjs from "~/media/reactjs.svg?jsx";
 import Tailwindcss from "~/media/tailwindcss.svg?jsx";
 
 export default component$(() => {

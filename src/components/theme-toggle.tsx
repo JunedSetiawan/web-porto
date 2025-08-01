@@ -3,13 +3,13 @@ import { server$ } from "@builder.io/qwik-city";
 
 // get the theme cookie
 export const getCookie = server$(function () {
-  const storedThemeValue = this.cookie?.get("theme")?.value;
+  const storedThemeValue = this.cookie.get("theme")?.value;
   return storedThemeValue;
 });
 
 // set the theme cookie
 export const setCookie = server$(function (themeMode: string) {
-  this.cookie?.set("theme", themeMode, {
+  this.cookie.set("theme", themeMode, {
     secure: true,
     httpOnly: true,
     sameSite: "strict",
