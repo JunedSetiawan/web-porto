@@ -38,8 +38,9 @@ export default component$(() => {
                     <span class="font-semibold text-primary">
                       Juned Setiawan
                     </span>
-                    , a passionate Fresh Graduate from Politeknik Elektronika
-                    Negeri Surabaya with a major in Informatics Engineering.
+                    , a passionate Software Engineering from Politeknik
+                    Elektronika Negeri Surabaya with a major in Informatics
+                    Engineering.
                   </p>
                   <p>
                     As a skilled Laravel Developer, I bring expertise in web
