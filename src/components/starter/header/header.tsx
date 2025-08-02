@@ -19,7 +19,7 @@ export default component$(() => {
           {/* Logo/Name */}
           <div class="flex items-center">
             <a href="#hero" class="text-xl font-bold gradient-text">
-              Juned.dev
+              Jun.dev
             </a>
           </div>
 

@@ -1,82 +1,117 @@
-import { component$ } from "@builder.io/qwik";
-import Prisma from "~/media/prisma.svg?jsx";
-import Html from "~/media/html.svg?jsx";
-import Css from "~/media/css.svg?jsx";
-import Bootstrap from "~/media/bootstrap.svg?jsx";
-import Expressjs from "~/media/expressjs.svg?jsx";
-import Git from "~/media/git.svg?jsx";
-import Javascript from "~/media/javascript.svg?jsx";
-import Jquery from "~/media/jquery.svg?jsx";
-import Laravel from "~/media/laravel.svg?jsx";
-import Mysql from "~/media/mysql.svg?jsx";
-import Nodejs from "~/media/nodejs.svg?jsx";
-import Tailwindcss from "~/media/tailwindcss.svg?jsx";
+import { component$, useSignal, $ } from "@builder.io/qwik";
 
 export default component$(() => {
+  const selectedCategory = useSignal("All");
+
   const skills = [
-    { icon: Html, name: "HTML5", category: "Frontend", level: "Expert" },
-    { icon: Css, name: "CSS3", category: "Frontend", level: "Expert" },
     {
-      icon: Javascript,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      name: "HTML5",
+      category: "Frontend",
+      level: "Expert",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      name: "CSS3",
+      category: "Frontend",
+      level: "Expert",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       name: "JavaScript",
       category: "Frontend",
-      level: "Advanced",
+      level: "Intermediate",
     },
-    { icon: Jquery, name: "jQuery", category: "Frontend", level: "Advanced" },
     {
-      icon: Bootstrap,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
+      name: "jQuery",
+      category: "Frontend",
+      level: "Intermediate",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
       name: "Bootstrap",
       category: "Framework",
       level: "Advanced",
     },
     {
-      icon: Tailwindcss,
+      icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
       name: "Tailwind CSS",
       category: "Framework",
-      level: "Expert",
+      level: "Advanced",
     },
-    { icon: Laravel, name: "Laravel", category: "Backend", level: "Expert" },
     {
-      icon: Nodejs,
+      icon: "https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg",
+      name: "Laravel",
+      category: "Backend",
+      level: "Advanced",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
       name: "Node.js",
       category: "Backend",
       level: "Intermediate",
     },
     {
-      icon: Expressjs,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
       name: "Express.js",
       category: "Backend",
       level: "Basic",
     },
     {
-      icon: Javascript,
+      icon: "https://www.vectorlogo.zone/logos/adonisjs/adonisjs-icon.svg",
       name: "AdonisJS",
       category: "Backend",
       level: "Intermediate",
     },
     {
-      icon: Javascript,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       name: "Next.js",
       category: "Frontend",
       level: "Intermediate",
     },
     {
-      icon: Javascript,
+      icon: "https://avatars.githubusercontent.com/u/58008469?s=200&v=4",
       name: "Refine.dev",
-      category: "Framework",
-      level: "Basic",
+      category: "Tools",
+      level: "Intermediate",
     },
-    { icon: Mysql, name: "MySQL", category: "Database", level: "Advanced" },
     {
-      icon: Mysql,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      name: "MySQL",
+      category: "Database",
+      level: "Advanced",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
       name: "PostgreSQL",
       category: "Database",
       level: "Intermediate",
     },
-    { icon: Prisma, name: "Prisma", category: "Database", level: "Basic" },
-    { icon: Git, name: "Git", category: "Tools", level: "Advanced" },
-    { icon: Git, name: "Postman", category: "Tools", level: "Advanced" },
-    { icon: Git, name: "Insomnia", category: "Tools", level: "Intermediate" },
+    {
+      icon: "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/prisma/prisma-original.svg",
+      name: "Prisma",
+      category: "Database",
+      level: "Basic",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      name: "Git",
+      category: "Tools",
+      level: "Advanced",
+    },
+    {
+      icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+      name: "Postman",
+      category: "Tools",
+      level: "Advanced",
+    },
+    {
+      icon: "https://raw.githubusercontent.com/gilbarbara/logos/refs/heads/main/logos/insomnia.svg",
+      name: "Insomnia",
+      category: "Tools",
+      level: "Intermediate",
+    },
   ];
 
   const categories = [
@@ -87,6 +122,15 @@ export default component$(() => {
     "Database",
     "Tools",
   ];
+
+  const filteredSkills =
+    selectedCategory.value === "All"
+      ? skills
+      : skills.filter((skill) => skill.category === selectedCategory.value);
+
+  const handleCategoryFilter = $((category: string) => {
+    selectedCategory.value = category;
+  });
 
   return (
     <section id="skill" class="relative py-0 overflow-hidden">
@@ -121,7 +165,12 @@ export default component$(() => {
             {categories.map((category) => (
               <button
                 key={category}
-                class="px-4 py-2 text-sm font-medium rounded-full border border-base-300 hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                onClick$={() => handleCategoryFilter(category)}
+                class={`px-4 py-2 text-sm font-medium rounded-full border transition-all duration-300 ${
+                  selectedCategory.value === category
+                    ? "border-primary bg-primary text-white shadow-lg shadow-primary/25"
+                    : "border-base-300 hover:border-primary hover:bg-primary/10 hover:text-primary"
+                }`}
               >
                 {category}
               </button>
@@ -130,8 +179,7 @@ export default component$(() => {
 
           {/* Skills Grid */}
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6">
-            {skills.map((skill, index) => {
-              const IconComponent = skill.icon;
+            {filteredSkills.map((skill, index) => {
               return (
                 <div
                   key={skill.name}
@@ -142,7 +190,12 @@ export default component$(() => {
                   <div class="flex justify-center mb-4">
                     <div class="relative">
                       <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300 group-hover:scale-110">
-                        <IconComponent class="w-10 h-10 text-base-content group-hover:text-primary transition-colors duration-300" />
+                        <img
+                          src={skill.icon}
+                          alt={skill.name}
+                          class="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                          loading="lazy"
+                        />
                       </div>
 
                       {/* Skill level indicator */}
@@ -195,7 +248,7 @@ export default component$(() => {
                 <div class="space-y-3">
                   <h4 class="font-semibold text-primary">Development</h4>
                   <div class="space-y-2 text-sm text-base-content/70">
-                    <p>• RESTful API Development</p>
+                    <p>• Full Stack Development</p>
                     <p>• Database Design & Optimization</p>
                     <p>• Version Control (Git)</p>
                     <p>• Responsive Web Design</p>
@@ -206,8 +259,8 @@ export default component$(() => {
                   <div class="space-y-2 text-sm text-base-content/70">
                     <p>• VS Code & PhpStorm</p>
                     <p>• Postman API Testing</p>
-                    <p>• XAMPP & Docker</p>
-                    <p>• Figma & Adobe XD</p>
+                    <p>• DataGrip</p>
+                    <p>• Figma & Whimsical</p>
                   </div>
                 </div>
                 <div class="space-y-3">

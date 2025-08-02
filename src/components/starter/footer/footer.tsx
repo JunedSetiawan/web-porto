@@ -3,22 +3,22 @@ import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <footer class="relative mt-20 overflow-hidden">
+    <footer class="relative overflow-hidden">
       {/* Background decoration */}
       <div class="absolute inset-0 -z-10">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div class="section-padding">
+      <div class="pb-10 pt-0 section-padding">
         <div class="max-w-6xl mx-auto">
           {/* Simple Footer Content */}
           <div class="text-center space-y-6">
             {/* Brand */}
             <div>
-              <span class="text-2xl font-bold gradient-text">Juned.dev</span>
+              <span class="text-2xl font-bold gradient-text">Jun.dev</span>
               <p class="text-base-content/70 mt-2 max-w-md mx-auto">
-                Laravel Web Developer passionate about creating efficient and
+                Software Engineering passionate about creating efficient and
                 innovative web solutions.
               </p>
             </div>
@@ -66,13 +66,14 @@ export default component$(() => {
             {/* Copyright */}
             <div class="border-t border-base-300/50 pt-6">
               <p class="text-base-content/60 text-sm">
-                © 2025 Juned Setiawan. Built with ❤ using Qwik & Tailwind CSS
+                © 2025 Juned Setiawan. Built with ❤ using Qwik JS & Tailwind
+                CSS
               </p>
             </div>
           </div>
 
           {/* Scroll to top button */}
-          <div class="fixed bottom-8 right-8">
+          {/* <div class="fixed bottom-8 right-8">
             <button
               onClick$={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               class="w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-colors duration-300 flex items-center justify-center group"
@@ -91,7 +92,7 @@ export default component$(() => {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

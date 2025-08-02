@@ -71,7 +71,7 @@ export default component$(() => {
                   </div>
                 </div>
                 <div class="glass-card p-6 text-center">
-                  <div class="text-3xl font-bold text-secondary mb-2">10+</div>
+                  <div class="text-3xl font-bold text-secondary mb-2">7+</div>
                   <div class="text-sm text-base-content/70">
                     Projects Completed
                   </div>
@@ -141,26 +141,6 @@ export default component$(() => {
           </div>
 
           {/* Call to Action */}
-          <div class="text-center mt-16">
-            <div class="glass-card p-8 max-w-2xl mx-auto">
-              <h3 class="text-2xl font-bold mb-4">
-                Let's Build Something Amazing Together
-              </h3>
-              <p class="text-base-content/70 mb-6">
-                I'm always excited to discuss new projects and opportunities.
-                Whether you have a project in mind or just want to connect, I'd
-                love to hear from you.
-              </p>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="btn btn-primary">
-                  Start a Conversation
-                </a>
-                <a href="#portfolio" class="btn btn-outline">
-                  View My Work
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -26,6 +26,10 @@ import DashboardPosts from "~/media/blog-splade/dashboardposts.png?jsx";
 import DashboardUser from "~/media/blog-splade/dashboarduser.png?jsx";
 import DashboardReport from "~/media/blog-splade/dashboardreport.png?jsx";
 import DashboardAccept from "~/media/blog-splade/dashboardaccept.png?jsx";
+// other projects
+import Abacanto from "~/media/freelance/abacanto.png?jsx";
+import Gallimard from "~/media/freelance/gallimard.png?jsx";
+import Counseling from "~/media/freelance/counseling.png?jsx";
 import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
@@ -54,14 +58,14 @@ export default component$(() => {
     },
     {
       id: "2",
-      title: "Information System Survey",
-      subtitle: "Survey Management System",
+      title: "Survey Information System",
+      subtitle: "Survey Management System Web",
       image: Dashsurvei,
       category: "Information System",
-      tech: ["Laravel", "MySQL", "Bootstrap", "Chart.js"],
+      tech: ["PHP", "MySQL", "Bootstrap", "Chart.js"],
       status: "Completed",
       description:
-        "This information system is to facilitate the management of surveys that have been filled in by applicants who go to the investment office, who previously used the Google form to fill out surveys. In this information system there are filters to handle surveys in the form of date ranges, checkboxes for answers from applicants, etc. and also has an export feature for daily or weekly reports.",
+        "This web information system is to facilitate the management of surveys that have been filled in by applicants who go to the investment office, who previously used the Google form to fill out surveys. In this information system there are filters to handle surveys in the form of date ranges, checkboxes for answers from applicants, etc. and also has an export feature for daily or weekly reports.",
       screenshots: [
         { component: FormSurvei, title: "Form Survey" },
         { component: LoginSurvei, title: "Login Page" },
@@ -70,17 +74,20 @@ export default component$(() => {
         { component: FiturSurvei2, title: "Summary Count Survey Page" },
         { component: FiturSurvei3, title: "Report Filter Page" },
       ],
+      links: {
+        github: "https://github.com/JunedSetiawan/si-survei",
+      },
     },
     {
-      id: "4",
-      title: "Blog News Splade",
+      id: "3",
+      title: "Blog Post Web Splade",
       subtitle: "News & Blog Platform",
       image: HomePage,
       category: "Content Management",
       tech: ["Laravel", "Splade", "MySQL", "Tailwind CSS"],
       status: "Completed",
       description:
-        "A SPA website to publish news posts or blogs with various features by slicing designs from several website references. The features are Search posts, post filters, post category filters, post likes and comments, post reports. All features work well with good RBAC.",
+        "A SPA website to publish news posts or blogs with various features by slicing designs from several website references. The features are search post filters, post category filters, post likes and comments, post reports. All features work well with good RBAC.",
       screenshots: [
         { component: HomePage, title: "Home Page" },
         { component: PostPage, title: "Post Page" },
@@ -94,11 +101,14 @@ export default component$(() => {
         { component: DashboardReport, title: "Dashboard Report" },
         { component: DashboardAccept, title: "Accept takedown post" },
       ],
+      links: {
+        github: "https://github.com/JunedSetiawan/blog-splade",
+      },
     },
     {
-      id: "5",
-      title: "System Inventory App",
-      subtitle: "Inventory Management System",
+      id: "4",
+      title: "System Inventory Web",
+      subtitle: "System Inventory App",
       image: Zeralogin,
       category: "Business Application",
       tech: ["Laravel", "MySQL", "Bootstrap", "Chart.js"],
@@ -110,27 +120,46 @@ export default component$(() => {
       },
     },
     {
-      id: "3",
-      title: "E-commerce Platform",
-      subtitle: "Modern E-commerce Solution",
-      image: Dashsurvei,
-      category: "E-commerce",
-      tech: ["Laravel", "Vue.js", "MySQL", "Stripe"],
-      status: "Work in Progress",
+      id: "5",
+      title: "Abacanto Holding Company Profile",
+      subtitle: "Corporate Website with CMS",
+      image: Abacanto,
+      category: "Corporate Website",
+      tech: ["Laravel", "MySQL", "Tailwind CSS", "CMS"],
+      status: "Live",
       description:
-        "A modern e-commerce platform with advanced features including product management, order processing, payment integration, and comprehensive admin dashboard.",
-      estimatedCompletion: "2 weeks+",
+        "Freelance project developing a complete company profile website with custom CMS. I was responsible for front-end development, creating all pages and form controls for the CMS. Also provided bug fixes and improvements to the CMS dashboard created by my colleague.",
+      links: {
+        demo: "https://abacantoholding.com/",
+      },
     },
     {
       id: "6",
-      title: "Prewire Starter Template",
-      subtitle: "Next-Gen Starter Template",
-      image: Dashsurvei,
-      category: "Template",
-      tech: ["Laravel", "Livewire", "Alpine.js", "Tailwind"],
-      status: "Coming Soon",
+      title: "Gallimard Advisory Company Profile",
+      subtitle: "Professional Services Website",
+      image: Gallimard,
+      category: "Corporate Website",
+      tech: ["Laravel", "MySQL", "Tailwind CSS", "CMS"],
+      status: "Live",
       description:
-        "A modern starter template with enhanced features and improved developer experience, focusing on performance and scalability.",
+        "Another freelance company profile project with integrated CMS solution. Handled complete front-end development including responsive design, form controls, and user interface for content management. Collaborated with backend developer to ensure seamless CMS functionality.",
+      links: {
+        demo: "https://gallimardadvisory.com/",
+      },
+    },
+    {
+      id: "7",
+      title: "Counseling Guidance Recording Information System",
+      subtitle: "Student Counseling Management System",
+      image: Counseling,
+      category: "Information System",
+      tech: ["Next.js", "Refine.dev", "AdonisJS", "RBAC", "PWA", "PostgreSQL"],
+      status: "Completed",
+      description:
+        "Website that manages information sources on Regulations, Violations, Order Awards, Counselling, Home Visits and Student Calls. On this website there is also a recap of violations and awards, lots of filters and a beautiful and optimal dashboard. For the frontend system, use NextJS from refine.dev. Backend uses AdonisJS with RBAC and JWT http-cookie which is safe from both the client and server sides. And it's also equipped with PWA so it's easy to access.",
+      links: {
+        github: "https://github.com/JunedSetiawan/fe-simbah-bk",
+      },
     },
   ];
 
@@ -201,70 +230,22 @@ export default component$(() => {
 
                   <span class="p-6 space-y-4 block">
                     <span class="block">
-                      <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      <span class="text-sm text-base-content/60 mt-1 block">
-                        {project.subtitle}
-                      </span>
-                    </span>
-
-                    <span class="text-base-content/70 text-sm leading-relaxed line-clamp-3 block">
-                      {project.description}
-                    </span>
-
-                    <span class="flex flex-wrap gap-2">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          class="px-2 py-1 bg-base-200 text-base-content/80 rounded text-xs font-medium"
-                        >
-                          {tech}
+                      <Modal id={`title-${project.id}`}>
+                        <span q:slot="header">
+                          <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300">
+                            {project.title}
+                          </h3>
                         </span>
-                      ))}
-                    </span>
-
-                    <span class="flex gap-3 pt-2">
-                      <Modal id={project.id}>
-                        <span q:slot="header">{project.subtitle}</span>
                         <span q:slot="title">
-                          <button class="btn btn-primary btn-sm flex-1">
-                            <svg
-                              class="w-4 h-4 mr-2"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                              />
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                              />
-                            </svg>
-                            View Details
-                          </button>
+                          <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors duration-300 cursor-pointer hover:underline">
+                            {project.title}
+                          </h3>
                         </span>
                         <span q:slot="content">
                           <span class="space-y-6 block">
                             <span class="text-base-content/80 block">
                               {project.description}
                             </span>
-
-                            {project.estimatedCompletion && (
-                              <span class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg border border-orange-200 dark:border-orange-800 block">
-                                <span class="text-orange-700 dark:text-orange-400 text-sm block">
-                                  <strong>Estimated Completion:</strong>{" "}
-                                  {project.estimatedCompletion}
-                                </span>
-                              </span>
-                            )}
 
                             {project.screenshots && (
                               <span class="block">
@@ -307,7 +288,7 @@ export default component$(() => {
                                       fill="currentColor"
                                       viewBox="0 0 24 24"
                                     >
-                                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                                     </svg>
                                     Source Code
                                   </Link>
@@ -339,12 +320,32 @@ export default component$(() => {
                           </span>
                         </span>
                       </Modal>
+                      <span class="text-sm text-base-content/60 mt-1 block">
+                        {project.subtitle}
+                      </span>
+                    </span>
+
+                    <span class="text-base-content/70 text-sm leading-relaxed line-clamp-3 block">
+                      {project.description}
+                    </span>
+
+                    <span class="flex flex-wrap gap-2 items-center justify-between">
+                      <span class="flex flex-wrap gap-2">
+                        {project.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            class="px-2 py-1 bg-base-200 text-base-content/80 rounded text-xs font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </span>
 
                       {project.links?.github && (
                         <Link
                           href={project.links.github}
                           target="_blank"
-                          class="btn btn-outline btn-sm"
+                          class="btn btn-outline btn-sm ml-2"
                         >
                           <svg
                             class="w-4 h-4"

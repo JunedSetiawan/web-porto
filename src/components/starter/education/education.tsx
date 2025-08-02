@@ -62,6 +62,22 @@ export default component$(() => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6"
+                    />
+                  </svg>
+                  Experience
+                </Tab>
+                <Tab class="btn btn-outline hover:btn-primary transition-all duration-300 font-semibold">
+                  <svg
+                    class="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
@@ -176,6 +192,207 @@ export default component$(() => {
                                   {skill}
                                 </span>
                               ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </TabPanel>
+
+              {/* Experience Tab */}
+              <TabPanel class="mt-10">
+                <div class="max-w-4xl mx-auto">
+                  <div class="space-y-8">
+                    {/* Timeline */}
+                    <div class="relative">
+                      {/* Timeline Line */}
+                      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary to-accent"></div>
+
+                      {/* Experience Items */}
+                      <div class="space-y-12">
+                        {/* Current Freelance */}
+                        <div class="timeline-item">
+                          <div class="timeline-dot bg-gradient-to-r from-secondary to-accent"></div>
+                          <div class="glass-card p-6 ml-6">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                              <div>
+                                <h3 class="text-xl font-bold text-secondary">
+                                  Freelance Web Developer
+                                </h3>
+                                <p class="text-base-content/80 font-medium">
+                                  Laravel Web Developer
+                                </p>
+                              </div>
+                              <span class="text-sm text-white bg-green-500 px-3 py-1 rounded-full mt-2 md:mt-0 flex items-center">
+                                <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
+                                May 2024 - Present
+                              </span>
+                            </div>
+                            <p class="text-base-content/70 mb-4">
+                              Create a Company Profile website with CMS using
+                              Laravel framework. Developing modern, responsive
+                              web applications with focus on performance, user
+                              experience, and maintainable code architecture
+                              with my friend.
+                            </p>
+                            <div class="space-y-3">
+                              <h4 class="font-semibold text-secondary">
+                                Key Responsibilities:
+                              </h4>
+                              <ul class="text-sm text-base-content/70 space-y-1 ml-4">
+                                <li class="flex items-start">
+                                  <span class="text-secondary mr-2">•</span>
+                                  Full-stack web development using Laravel
+                                  framework
+                                </li>
+                                <li class="flex items-start">
+                                  <span class="text-secondary mr-2">•</span>
+                                  Content Management System (CMS) development
+                                </li>
+                                <li class="flex items-start">
+                                  <span class="text-secondary mr-2">•</span>
+                                  Database design and optimization
+                                </li>
+                                <li class="flex items-start">
+                                  <span class="text-secondary mr-2">•</span>
+                                  Responsive design implementation
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                              {[
+                                "Laravel",
+                                "PHP",
+                                "PostgreSQL",
+                                "HTML/CSS",
+                                "JavaScript",
+                                "Tailwind CSS",
+                                "Node.js",
+                              ].map((skill) => (
+                                <span
+                                  key={skill}
+                                  class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs"
+                                >
+                                  {skill}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* PKL Internship */}
+                        <div class="timeline-item">
+                          <div class="timeline-dot bg-gradient-to-r from-accent to-primary"></div>
+                          <div class="glass-card p-6 ml-6">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                              <div>
+                                <h3 class="text-xl font-bold text-accent">
+                                  PKL/Vocational School Internship
+                                </h3>
+                                <p class="text-base-content/80 font-medium">
+                                  Web PHP Developer - Dinas Penanaman Modal dan
+                                  Pelayanan Terpadu Satu Pintu
+                                </p>
+                              </div>
+                              <span class="text-sm text-base-content/60 bg-accent/10 px-3 py-1 rounded-full mt-2 md:mt-0">
+                                January 2021 - June 2021
+                              </span>
+                            </div>
+                            <p class="text-base-content/70 mb-4">
+                              Create a survey information system web
+                              application, as a replacement for surveys carried
+                              out on Google Forms by registrants at the Office.
+                              Gained hands-on experience in government sector
+                              web development and user requirement analysis.
+                            </p>
+                            <div class="space-y-3">
+                              <h4 class="font-semibold text-accent">
+                                Key Achievements:
+                              </h4>
+                              <ul class="text-sm text-base-content/70 space-y-1 ml-4">
+                                <li class="flex items-start">
+                                  <span class="text-accent mr-2">•</span>
+                                  Developed complete survey information system
+                                  from scratch
+                                </li>
+                                <li class="flex items-start">
+                                  <span class="text-accent mr-2">•</span>
+                                  Replaced manual Google Forms process with
+                                  automated web system
+                                </li>
+                                <li class="flex items-start">
+                                  <span class="text-accent mr-2">•</span>
+                                  Collaborated with government office staff for
+                                  requirements gathering
+                                </li>
+                                <li class="flex items-start">
+                                  <span class="text-accent mr-2">•</span>
+                                  Improved office efficiency through digital
+                                  transformation
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                              {[
+                                "PHP",
+                                "Web Development",
+                                "Survey System",
+                                "Database Design",
+                                "Government Sector",
+                              ].map((skill) => (
+                                <span
+                                  key={skill}
+                                  class="px-2 py-1 bg-accent/10 text-accent rounded text-xs"
+                                >
+                                  {skill}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Professional Growth */}
+                    <div class="mt-12 text-center">
+                      <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold mb-6">
+                          Professional Development
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                          <div class="space-y-3">
+                            <h4 class="font-semibold text-secondary">
+                              Technical Growth
+                            </h4>
+                            <div class="space-y-2 text-sm text-base-content/70">
+                              <p>• Advanced Laravel Framework</p>
+                              <p>• Modern PHP Development</p>
+                              <p>• Database Optimization</p>
+                              <p>• API Development</p>
+                            </div>
+                          </div>
+                          <div class="space-y-3">
+                            <h4 class="font-semibold text-accent">
+                              Project Skills
+                            </h4>
+                            <div class="space-y-2 text-sm text-base-content/70">
+                              <p>• Client Communication</p>
+                              <p>• Requirement Analysis</p>
+                              <p>• Project Planning</p>
+                              <p>• Quality Delivery</p>
+                            </div>
+                          </div>
+                          <div class="space-y-3">
+                            <h4 class="font-semibold text-primary">
+                              Industry Impact
+                            </h4>
+                            <div class="space-y-2 text-sm text-base-content/70">
+                              <p>• Government Digitalization</p>
+                              <p>• Business Process Automation</p>
+                              <p>• User Experience Enhancement</p>
+                              <p>• System Efficiency</p>
                             </div>
                           </div>
                         </div>
