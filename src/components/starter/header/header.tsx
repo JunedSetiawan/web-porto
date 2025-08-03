@@ -35,7 +35,7 @@ export default component$(() => {
               href="#education"
               class="text-base-content/70 hover:text-primary transition-colors duration-300 font-medium"
             >
-              Education
+              Education & Experience
             </a>
             <a
               href="#skill"

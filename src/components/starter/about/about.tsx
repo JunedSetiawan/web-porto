@@ -118,7 +118,7 @@ export default component$(() => {
               </div>
 
               {/* Personal Interests */}
-              <div class="glass-card p-8">
+              {/* <div class="glass-card p-8">
                 <h4 class="text-xl font-bold mb-4">Beyond Code</h4>
                 <div class="flex flex-wrap gap-2">
                   {[
@@ -136,7 +136,7 @@ export default component$(() => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

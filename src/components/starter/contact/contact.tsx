@@ -139,7 +139,7 @@ export default component$(() => {
               </div>
 
               {/* Social Media Links */}
-              <div class="glass-effect rounded-2xl p-8 backdrop-blur-sm bg-base-100/50 border border-base-300/50">
+              {/* <div class="glass-effect rounded-2xl p-8 backdrop-blur-sm bg-base-100/50 border border-base-300/50">
                 <h3 class="text-xl font-bold mb-6">Connect With Me</h3>
                 <div class="flex flex-wrap gap-4">
                   <Link
@@ -190,12 +190,12 @@ export default component$(() => {
                     Facebook
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
           {/* Call to Action */}
-          <div class="text-center mt-16">
+          {/* <div class="text-center mt-16">
             <div class="glass-effect rounded-2xl p-8 backdrop-blur-sm bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 max-w-2xl mx-auto">
               <h3 class="text-2xl font-bold mb-4">
                 Ready to Start Your Project?
@@ -221,7 +221,7 @@ export default component$(() => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

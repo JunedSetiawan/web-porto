@@ -66,8 +66,9 @@ export default component$(() => {
             {/* Copyright */}
             <div class="border-t border-base-300/50 pt-6">
               <p class="text-base-content/60 text-sm">
-                © 2025 Juned Setiawan. Built with ❤ using Qwik JS & Tailwind
-                CSS
+                © 2025 Juned Setiawan{" "}
+                <span class="font-semibold gradient-text">Lazy Programmer</span>
+                . Built with 🦭 using Qwik JS & Tailwind CSS
               </p>
             </div>
           </div>
