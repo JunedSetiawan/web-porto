@@ -108,7 +108,7 @@ export default component$(() => {
             </div>
 
             {/* Image Section */}
-            <div class="relative flex justify-center lg:justify-end order-1 lg:order-2">
+            <div class="relative flex justify-center mr-0 lg:mr-20 lg:justify-end order-1 lg:order-2">
               <div class="relative group">
                 {/* Background decoration */}
                 <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
@@ -117,7 +117,7 @@ export default component$(() => {
                 {/* Main image */}
                 <div class="relative z-10 overflow-hidden rounded-3xl shadow-2xl">
                   <ImgProfile
-                    class="w-64 h-80 sm:w-72 sm:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                    class="w-56 h-64 sm:w-72 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="eager"
                     alt="Juned Setiawan S - Laravel Web Developer"
                   />
