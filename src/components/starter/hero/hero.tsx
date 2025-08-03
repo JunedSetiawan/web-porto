@@ -21,7 +21,7 @@ export default component$(() => {
             {/* Text Content */}
             <div class="space-y-8 text-center lg:text-left order-2 lg:order-1">
               <div class="space-y-4">
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold">
                   <span class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
                   Available for work
                 </div>

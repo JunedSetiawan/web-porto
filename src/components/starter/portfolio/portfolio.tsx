@@ -364,26 +364,13 @@ export default component$(() => {
           </span>
 
           <span class="text-center block">
-            <span class="glass-card p-8 max-w-2xl mx-auto block">
-              <h3 class="text-2xl font-bold mb-4">Interested in My Work?</h3>
-              <span class="text-base-content/70 mb-6 block">
-                I'm always working on new projects and exploring cutting-edge
-                technologies. Let's discuss how we can collaborate on your next
-                big idea.
-              </span>
-              <span class="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="#contact" class="btn btn-primary">
-                  Start a Project
-                </Link>
-                <Link
-                  href="https://github.com/JunedSetiawan"
-                  target="_blank"
-                  class="btn btn-outline"
-                >
-                  View All Projects
-                </Link>
-              </span>
-            </span>
+            <Link
+              href="https://github.com/JunedSetiawan"
+              target="_blank"
+              class="btn btn-outline"
+            >
+              View All Projects
+            </Link>
           </span>
         </span>
       </span>

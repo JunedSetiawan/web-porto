@@ -145,7 +145,7 @@ export default component$(() => {
                               ].map((skill) => (
                                 <span
                                   key={skill}
-                                  class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs"
+                                  class="px-2 py-1 bg-primary/10 text-primary rounded text-xs"
                                 >
                                   {skill}
                                 </span>
@@ -160,14 +160,14 @@ export default component$(() => {
                           <div class="glass-card p-6 ml-6">
                             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                               <div>
-                                <h3 class="text-xl font-bold text-secondary">
+                                <h3 class="text-xl font-bold text-accent">
                                   SMK Negeri 1 Jenangan Ponorogo
                                 </h3>
                                 <p class="text-base-content/80 font-medium">
                                   Vocational High School - Software Engineering
                                 </p>
                               </div>
-                              <span class="text-sm text-base-content/60 bg-secondary/10 px-3 py-1 rounded-full mt-2 md:mt-0">
+                              <span class="text-sm text-base-content/60 bg-accent/10 px-3 py-1 rounded-full mt-2 md:mt-0">
                                 July 2019 - June 2022
                               </span>
                             </div>
@@ -214,11 +214,11 @@ export default component$(() => {
                       <div class="space-y-12">
                         {/* Current Freelance */}
                         <div class="timeline-item">
-                          <div class="timeline-dot bg-gradient-to-r from-secondary to-accent"></div>
+                          <div class="timeline-dot bg-gradient-to-r from-primary to-accent"></div>
                           <div class="glass-card p-6 ml-6">
                             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                               <div>
-                                <h3 class="text-xl font-bold text-secondary">
+                                <h3 class="text-xl font-bold text-primary">
                                   Freelance Web Developer
                                 </h3>
                                 <p class="text-base-content/80 font-medium">
@@ -238,25 +238,25 @@ export default component$(() => {
                               with my friend.
                             </p>
                             <div class="space-y-3">
-                              <h4 class="font-semibold text-secondary">
+                              <h4 class="font-semibold text-primary">
                                 Key Responsibilities:
                               </h4>
                               <ul class="text-sm text-base-content/70 space-y-1 ml-4">
                                 <li class="flex items-start">
-                                  <span class="text-secondary mr-2">•</span>
+                                  <span class="text-primary mr-2">•</span>
                                   Full-stack web development using Laravel
                                   framework
                                 </li>
                                 <li class="flex items-start">
-                                  <span class="text-secondary mr-2">•</span>
+                                  <span class="text-primary mr-2">•</span>
                                   Content Management System (CMS) development
                                 </li>
                                 <li class="flex items-start">
-                                  <span class="text-secondary mr-2">•</span>
+                                  <span class="text-primary mr-2">•</span>
                                   Database design and optimization
                                 </li>
                                 <li class="flex items-start">
-                                  <span class="text-secondary mr-2">•</span>
+                                  <span class="text-primary mr-2">•</span>
                                   Responsive design implementation
                                 </li>
                               </ul>
@@ -273,7 +273,7 @@ export default component$(() => {
                               ].map((skill) => (
                                 <span
                                   key={skill}
-                                  class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs"
+                                  class="px-2 py-1 bg-primary/10 text-primary rounded text-xs"
                                 >
                                   {skill}
                                 </span>
