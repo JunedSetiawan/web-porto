@@ -13,10 +13,9 @@ export const RouterHead = component$(() => {
     <>
       <title>{head.title}</title>
 
-      {!head.links.find((l) => l.rel === "canonical") && (
-        <link rel="canonical" href={loc.url.href} />
-      )}
+      <link rel="canonical" href="https://juned-setiawan.my.id/" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="canonical" href={loc.url.href} />
       <link rel="icon" type="image/svg+xml" href="/snorx.png" />
       <meta
         name="google-site-verification"

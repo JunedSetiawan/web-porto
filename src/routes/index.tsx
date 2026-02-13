@@ -77,10 +77,4 @@ export const head: DocumentHead = {
       content: "Juned Setiawan Suyadi",
     },
   ],
-  links: [
-    {
-      rel: "canonical",
-      href: "https://juned-setiawan.my.id/",
-    },
-  ],
 };
