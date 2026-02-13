@@ -16,6 +16,10 @@ export const RouterHead = component$(() => {
       <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/snorx.png" />
+      <meta
+        name="google-site-verification"
+        content="Ip2BpSTQH-80yNK8azKAwFke2OwKFl4Ln8Fk6rJymtY"
+      />
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
