@@ -13,7 +13,9 @@ export const RouterHead = component$(() => {
     <>
       <title>{head.title}</title>
 
-      <link rel="canonical" href={loc.url.href} />
+      {!head.links.find((l) => l.rel === "canonical") && (
+        <link rel="canonical" href={loc.url.href} />
+      )}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/snorx.png" />
       <meta

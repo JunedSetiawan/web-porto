@@ -57,7 +57,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Juned Setiawan S - Web Developer",
+  title: "Juned Setiawan Suyadi - Web Developer",
   meta: [
     {
       name: "description",
@@ -75,6 +75,12 @@ export const head: DocumentHead = {
     {
       name: "author",
       content: "Juned Setiawan Suyadi",
+    },
+  ],
+  links: [
+    {
+      rel: "canonical",
+      href: "https://juned-setiawan.my.id/",
     },
   ],
 };
