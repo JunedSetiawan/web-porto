@@ -44,7 +44,7 @@
           <h2 class="text-4xl md:text-5xl font-bold mb-6">
             About <span class="gradient-text">Me</span>
           </h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
       {/if}
 
@@ -54,7 +54,7 @@
           {#if visible}
             <div class="glass-card p-8" in:fly={{ y: 50, duration: 800, delay: 300 }}>
               <h3 class="text-2xl font-bold mb-4 flex items-center">
-                <div class="w-2 h-8 bg-gradient-to-b from-primary to-secondary rounded-full mr-4"></div>
+                <div class="w-2 h-8 bg-primary rounded-full mr-4"></div>
                 My Journey
               </h3>
               <div class="space-y-4 text-base-content/80 leading-relaxed">

@@ -23,26 +23,30 @@
 
 @layer base {
   :root {
-    --color-primary-val: #8b5cf6;
-    --color-secondary-val: #ec4899;
-    --color-accent-val: #06b6d4;
+    /* Light mode - Creative & Vibrant (Base on warm tones & blue) */
+    --color-primary-val: #ef4444; /* Vibrant Red/Coral */
+    --color-secondary-val: #eab308; /* Warm Amber */
+    --color-accent-val: #0ea5e9; /* Sky Blue */
     
-    /* Light mode */
-    --color-base-100-val: #ffffff;
-    --color-base-200-val: #f4f4f5;
-    --color-base-300-val: #e4e4e7;
-    --color-base-content-val: #18181b;
+    --color-base-100-val: #fafaf9; /* Off-white stone */
+    --color-base-200-val: #f5f5f4;
+    --color-base-300-val: #e7e5e4;
+    --color-base-content-val: #1c1917; /* Dark stone */
 
     scroll-behavior: smooth;
     color-scheme: light;
   }
 
   :root.dark {
-    /* Dark mode */
-    --color-base-100-val: #18181b;
-    --color-base-200-val: #27272a;
-    --color-base-300-val: #3f3f46;
-    --color-base-content-val: #f4f4f5;
+    /* Dark mode - Sleek & Modern (Base on deep teal/cyan) */
+    --color-primary-val: #0d9488; /* Deep Teal */
+    --color-secondary-val: #db2777; /* Pink/Rose contrast */
+    --color-accent-val: #f59e0b; /* Amber accent */
+    
+    --color-base-100-val: #0f172a; /* Very dark blue/slate */
+    --color-base-200-val: #1e293b;
+    --color-base-300-val: #334155;
+    --color-base-content-val: #f8fafc; /* Crisp white/slate */
 
     color-scheme: dark;
   }
@@ -60,9 +64,9 @@
     @apply backdrop-blur-md bg-base-content/5 border border-base-content/10 rounded-2xl shadow-xl;
   }
 
-  /* Gradient text effect */
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  /* Solid text effect (replacing gradient-text) */
+  .solid-text {
+    @apply text-primary font-bold;
   }
 
   /* Modern section padding */
@@ -72,7 +76,7 @@
 
   /* Modern skill card */
   .skill-card {
-    @apply relative p-6 bg-gradient-to-br from-base-300 to-base-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-primary/30;
+    @apply relative p-6 bg-base-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-primary/50;
   }
   
   /* Timeline styling */
@@ -111,5 +115,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/70;
+  @apply bg-primary;
 }

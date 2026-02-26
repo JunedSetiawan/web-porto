@@ -71,8 +71,8 @@
               </h1>
 
               <div class="space-y-2 h-[80px]"> <!-- Fixed height to prevent layout shift with typewriter -->
-                <p class="text-xl sm:text-2xl lg:text-3xl font-semibold text-base-content/90 h-[40px]">
-                  {currentText}<span class="animate-pulse">|</span>
+                <p class="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary h-[40px]">
+                  {currentText}<span class="animate-pulse text-base-content">|</span>
                 </p>
                 <p class="text-lg text-base-content/60">
                   Passionate about creating efficient and innovative web solutions with expertise in Laravel, modern web technologies, and user-centered design principles.
@@ -82,8 +82,8 @@
 
             <div class="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start pt-14 md:pt-9" in:fly={{ y: 50, duration: 1000, delay: 400 }}>
               <a href="#contact" class="px-8 py-4 bg-primary text-primary-content font-semibold rounded-lg shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
-                <span class="relative z-10 text-white">Get In Touch</span>
-                <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span class="relative z-10 text-primary-content">Get In Touch</span>
+                <div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
               <a href="#portfolio" class="px-8 py-4 bg-base-100 text-base-content border border-base-content/20 font-semibold rounded-lg hover:border-primary/50 hover:text-primary transition-all duration-300 shadow-sm hover:shadow-md">
@@ -114,8 +114,8 @@
           {#if visible}
             <div class="relative group" in:fly={{ x: 50, duration: 1200, delay: 300 }}>
               <!-- Background decoration -->
-              <div class="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
-              <div class="absolute inset-0 bg-gradient-to-bl from-accent/30 to-primary/30 rounded-3xl -rotate-6 group-hover:-rotate-12 transition-transform duration-500"></div>
+              <div class="absolute inset-0 bg-primary/20 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+              <div class="absolute inset-0 bg-secondary/20 rounded-3xl -rotate-6 group-hover:-rotate-12 transition-transform duration-500"></div>
 
               <!-- Main image -->
               <div class="relative z-10 overflow-hidden rounded-3xl shadow-2xl glass-card">
@@ -126,8 +126,8 @@
                   fetchpriority="high"
                 />
                 
-                <!-- Overlay gradient -->
-                <div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <!-- Overlay hover effect -->
+                <div class="absolute inset-0 bg-base-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
               <!-- Floating elements -->

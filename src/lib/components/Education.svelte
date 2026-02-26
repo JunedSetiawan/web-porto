@@ -56,7 +56,7 @@
           <p class="text-lg text-base-content/70 max-w-2xl mx-auto mb-8">
             My educational background and achievements that shaped my expertise in web development and technology.
           </p>
-          <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
       {/if}
 
@@ -97,10 +97,10 @@
               <div transition:fade={{ duration: 400 }} class="absolute w-full top-0 left-0">
                 <div class="max-w-4xl mx-auto space-y-8">
                   <div class="relative">
-                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-primary"></div>
                     <div class="space-y-12">
                       <div class="timeline-item">
-                        <div class="timeline-dot bg-gradient-to-r from-primary to-secondary"></div>
+                        <div class="timeline-dot bg-primary"></div>
                         <div class="glass-card p-6 ml-6 transition-all hover:-translate-y-1 hover:border-primary/50">
                           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                             <div>
@@ -121,7 +121,7 @@
                       </div>
 
                       <div class="timeline-item">
-                        <div class="timeline-dot bg-gradient-to-r from-secondary to-accent"></div>
+                        <div class="timeline-dot bg-secondary"></div>
                         <div class="glass-card p-6 ml-6 transition-all hover:-translate-y-1 hover:border-accent/50">
                           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                             <div>
@@ -150,10 +150,10 @@
               <div transition:fade={{ duration: 400 }} class="absolute w-full top-0 left-0">
                 <div class="max-w-4xl mx-auto space-y-8">
                   <div class="relative">
-                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary to-accent"></div>
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary"></div>
                     <div class="space-y-12">
                       <div class="timeline-item">
-                        <div class="timeline-dot bg-gradient-to-r from-primary to-accent"></div>
+                        <div class="timeline-dot bg-primary"></div>
                         <div class="glass-card p-6 ml-6 transition-all hover:-translate-y-1 hover:border-primary/50">
                           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                             <div>
@@ -186,7 +186,7 @@
                       </div>
 
                       <div class="timeline-item">
-                        <div class="timeline-dot bg-gradient-to-r from-accent to-primary"></div>
+                        <div class="timeline-dot bg-accent"></div>
                         <div class="glass-card p-6 ml-6 transition-all hover:-translate-y-1 hover:border-accent/50">
                           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                             <div>
@@ -224,10 +224,10 @@
               <div transition:fade={{ duration: 400 }} class="absolute w-full top-0 left-0">
                 <div class="max-w-4xl mx-auto space-y-8">
                   <div class="relative">
-                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-primary"></div>
                     <div class="space-y-12">
                       <div class="timeline-item">
-                        <div class="timeline-dot bg-gradient-to-r from-primary to-secondary flex items-center justify-center p-1">
+                        <div class="timeline-dot bg-primary flex items-center justify-center p-1">
                           <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                           </svg>
@@ -259,7 +259,7 @@
                       <h3 class="text-2xl font-bold mb-6">Key Achievements</h3>
                       <div class="grid md:grid-cols-3 gap-6">
                         <div class="space-y-3">
-                          <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mx-auto">
+                          <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
@@ -268,7 +268,7 @@
                           <p class="text-sm text-base-content/70">Demonstrated innovative thinking in data science competitions and academic projects</p>
                         </div>
                         <div class="space-y-3">
-                          <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-lg flex items-center justify-center mx-auto">
+                          <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mx-auto">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                             </svg>
@@ -277,7 +277,7 @@
                           <p class="text-sm text-base-content/70">Active participation in team-based competitions and collaborative projects</p>
                         </div>
                         <div class="space-y-3">
-                          <div class="w-12 h-12 bg-gradient-to-r from-accent to-primary rounded-lg flex items-center justify-center mx-auto">
+                          <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mx-auto">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
@@ -297,7 +297,7 @@
                 <div class="max-w-4xl mx-auto space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6">
                   <div class="glass-card p-6 group hover:scale-105 transition-transform duration-300 border-base-300 hover:border-primary/50 cursor-pointer">
                     <div class="flex items-start space-x-4">
-                      <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center shrink-0">
+                      <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
@@ -317,7 +317,7 @@
 
                   <div class="glass-card p-6 group hover:scale-105 transition-transform duration-300 border-base-300 hover:border-secondary/50 cursor-pointer">
                     <div class="flex items-start space-x-4">
-                      <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-lg flex items-center justify-center shrink-0">
+                      <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center shrink-0">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"/>
                         </svg>

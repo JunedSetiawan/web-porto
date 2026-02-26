@@ -43,7 +43,7 @@
           <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
             Ready to bring your ideas to life? I'm always excited to discuss new projects and opportunities. Let's create something amazing together.
           </p>
-          <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-6"></div>
+          <div class="w-24 h-1 bg-primary mx-auto rounded-full mt-6"></div>
         </div>
 
         <div class="grid lg:grid-cols-1 gap-16 items-start justify-center">
@@ -51,7 +51,7 @@
           <div class="space-y-8 max-w-4xl mx-auto w-full">
             <div class="space-y-4">
               <h3 class="text-2xl font-bold mb-6 flex items-center" in:fly={{ x: -30, duration: 800, delay: 200 }}>
-                <div class="w-2 h-8 bg-gradient-to-b from-secondary to-accent rounded-full mr-4"></div>
+                <div class="w-2 h-8 bg-secondary rounded-full mr-4"></div>
                 Contact Information
               </h3>
               <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">

@@ -71,7 +71,7 @@
           <p class="text-lg text-base-content/70 max-w-2xl mx-auto mb-8">
             A comprehensive overview of the technologies and tools I use to build modern, scalable web applications and deliver exceptional user experiences.
           </p>
-          <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
         <!-- Skills Categories Filter -->
@@ -95,7 +95,7 @@
             >
               <!-- Icon -->
               <div class="flex justify-center mb-4 relative z-10">
-                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300 group-hover:scale-110">
+                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
                   <img src={skill.icon} alt={skill.name} class="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" loading="lazy" />
                 </div>
 
@@ -117,7 +117,7 @@
               </div>
 
               <!-- Hover overlay -->
-              <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div class="absolute inset-0 rounded-xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           {/each}
         </div>

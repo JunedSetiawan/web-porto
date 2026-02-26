@@ -166,7 +166,7 @@
           <p class="text-lg text-base-content/70 max-w-2xl mx-auto mb-8">
             A showcase of my recent projects demonstrating expertise in full-stack development, modern web technologies, and user-centered design principles.
           </p>
-          <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-8 mb-16">
@@ -174,7 +174,7 @@
             <div class="portfolio-card glass-card hover:scale-[1.02] cursor-pointer group" in:fly={{ y: 50, duration: 800, delay: index * 100 }} onclick={() => openModal(project)} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') openModal(project); }} role="button" tabindex="0">
               <div class="relative overflow-hidden rounded-t-2xl">
                 <img src={project.image} alt={project.title} class="w-full h-64 sm:h-80 object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                <div class="absolute inset-0 bg-gradient-to-t from-base-300 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 bg-base-300/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div class="absolute top-4 right-4">
                   <span class="px-3 py-1 rounded-full text-xs font-medium shadow-md {project.status === 'Completed' ? 'bg-green-500 text-white' : project.status === 'Work in Progress' ? 'bg-orange-500 text-white' : 'bg-blue-500 text-white'}">
@@ -235,7 +235,7 @@
     <div class="flex flex-col h-full max-h-[90vh]">
       <!-- Header -->
       <div class="flex justify-between items-center p-6 border-b border-base-content/10 sticky top-0 bg-base-100/80 backdrop-blur-md z-10">
-        <h3 class="text-2xl font-bold text-base-content gradient-text">{activeProject.title}</h3>
+        <h3 class="text-2xl font-bold solid-text">{activeProject.title}</h3>
         <button onclick={closeModal} class="p-2 hover:bg-base-200 rounded-full transition-colors" aria-label="Close">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
