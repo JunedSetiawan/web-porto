@@ -92,9 +92,9 @@
           </div>
 
           <!-- Tab Content Area -->
-          <div class="mt-10 min-h-[500px] relative">
+          <div class="mt-10 grid items-start">
             {#if activeTab === "Education"}
-              <div transition:fade={{ duration: 400 }} class="absolute w-full top-0 left-0">
+              <div transition:fade={{ duration: 400 }} class="col-start-1 row-start-1 w-full">
                 <div class="max-w-4xl mx-auto space-y-8">
                   <div class="relative">
                     <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-primary"></div>
@@ -147,7 +147,7 @@
             {/if}
 
             {#if activeTab === "Experience"}
-              <div transition:fade={{ duration: 400 }} class="absolute w-full top-0 left-0">
+              <div transition:fade={{ duration: 400 }} class="col-start-1 row-start-1 w-full">
                 <div class="max-w-4xl mx-auto space-y-8">
                   <div class="relative">
                     <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary"></div>
@@ -221,7 +221,7 @@
             {/if}
 
             {#if activeTab === "Achievement"}
-              <div transition:fade={{ duration: 400 }} class="absolute w-full top-0 left-0">
+              <div transition:fade={{ duration: 400 }} class="col-start-1 row-start-1 w-full">
                 <div class="max-w-4xl mx-auto space-y-8">
                   <div class="relative">
                     <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-primary"></div>
@@ -293,7 +293,7 @@
             {/if}
 
             {#if activeTab === "Certificate"}
-              <div transition:fade={{ duration: 400 }} class="absolute w-full top-0 left-0">
+              <div transition:fade={{ duration: 400 }} class="col-start-1 row-start-1 w-full">
                 <div class="max-w-4xl mx-auto space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6">
                   <div class="glass-card p-6 group hover:scale-105 transition-transform duration-300 border-base-300 hover:border-primary/50 cursor-pointer">
                     <div class="flex items-start space-x-4">
