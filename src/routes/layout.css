@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: var(--color-primary-val);
+  --color-secondary: var(--color-secondary-val);
+  --color-accent: var(--color-accent-val);
+  
+  --color-base-100: var(--color-base-100-val);
+  --color-base-200: var(--color-base-200-val);
+  --color-base-300: var(--color-base-300-val);
+  --color-base-content: var(--color-base-content-val);
+
+  --animate-blob: blob 7s infinite;
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
+
+@layer base {
+  :root {
+    --color-primary-val: #8b5cf6;
+    --color-secondary-val: #ec4899;
+    --color-accent-val: #06b6d4;
+    
+    /* Light mode */
+    --color-base-100-val: #ffffff;
+    --color-base-200-val: #f4f4f5;
+    --color-base-300-val: #e4e4e7;
+    --color-base-content-val: #18181b;
+
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  :root.dark {
+    /* Dark mode */
+    --color-base-100-val: #18181b;
+    --color-base-200-val: #27272a;
+    --color-base-300-val: #3f3f46;
+    --color-base-content-val: #f4f4f5;
+
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-base-100 text-base-content;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  /* Glass effect for modern cards */
+  .glass-card {
+    @apply backdrop-blur-md bg-base-content/5 border border-base-content/10 rounded-2xl shadow-xl;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Modern section padding */
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 lg:px-8 xl:px-16;
+  }
+
+  /* Modern skill card */
+  .skill-card {
+    @apply relative p-6 bg-gradient-to-br from-base-300 to-base-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-primary/30;
+  }
+  
+  /* Timeline styling */
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-primary/30 ml-4;
+  }
+
+  .timeline-dot {
+    @apply absolute -left-3 top-2 w-6 h-6 bg-primary rounded-full border-4 border-base-100 shadow-lg;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-base-300;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 text-transparent rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/70;
+}
