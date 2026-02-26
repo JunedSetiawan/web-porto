@@ -100,7 +100,7 @@
                 </div>
 
                 <!-- Skill level indicator -->
-                <div class="absolute top-0 right-1/2 translate-x-10 translate-y-[-8px] w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center text-white bg-gradient-to-r from-primary to-secondary transition-all duration-300 transform scale-0 group-hover:scale-100 shadow-md">
+                <div class="absolute top-0 right-1/2 translate-x-10 translate-y-[-8px] w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center text-primary-content bg-primary transition-all duration-300 transform scale-0 group-hover:scale-100 shadow-md">
                   {#if skill.level === "Expert"}★{:else if skill.level === "Advanced"}●{:else if skill.level === "Intermediate"}◐{:else}○{/if}
                 </div>
               </div>

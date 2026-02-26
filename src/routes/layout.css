@@ -38,12 +38,12 @@
   }
 
   :root.dark {
-    /* Dark mode - Sleek & Modern (Base on deep teal/cyan) */
-    --color-primary-val: #0d9488; /* Deep Teal */
-    --color-secondary-val: #db2777; /* Pink/Rose contrast */
-    --color-accent-val: #f59e0b; /* Amber accent */
+    /* Dark mode - Sleek & Modern (Base on Logo Blue) */
+    --color-primary-val: #287dc0; /* Logo Blue */
+    --color-secondary-val: #38bdf8; /* Lighter Sky Blue */
+    --color-accent-val: #818cf8; /* Indigo accent */
     
-    --color-base-100-val: #0f172a; /* Very dark blue/slate */
+    --color-base-100-val: #0f172a; /* Very dark slate */
     --color-base-200-val: #1e293b;
     --color-base-300-val: #334155;
     --color-base-content-val: #f8fafc; /* Crisp white/slate */

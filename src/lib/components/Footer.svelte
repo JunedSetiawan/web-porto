@@ -1,3 +1,7 @@
+<script lang="ts">
+  const currentYear = new Date().getFullYear();
+</script>
+
 <footer class="relative overflow-hidden">
   <!-- Background decoration -->
   <div class="absolute inset-0 -z-10">
@@ -5,14 +9,14 @@
     <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
   </div>
 
-  <div class="pb-10 pt-0 section-padding">
+  <div class="pb-10 pt-5 section-padding">
     <div class="max-w-6xl mx-auto">
       <!-- Simple Footer Content -->
       <div class="text-center space-y-6">
         <!-- Brand -->
-        <div>
-          <span class="text-2xl font-bold gradient-text">Jun.dev</span>
-          <p class="text-base-content/70 mt-2 max-w-md mx-auto">
+        <div class="flex flex-col items-center">
+          <img src="/logo.png" alt="Logo" class="h-10 w-auto">
+          <p class="text-base-content/70 mt-4 max-w-md mx-auto">
             Software Engineering passionate about creating efficient and innovative web solutions.
           </p>
         </div>
@@ -62,8 +66,7 @@
         <!-- Copyright -->
         <div class="border-t border-base-content/10 pt-6">
           <p class="text-base-content/60 text-sm">
-            © 2025 Juned Setiawan <span class="font-semibold gradient-text">Lazy Programmer</span>. Built with 🚀 using
-            Svelte 5 & Tailwind CSS
+            © {currentYear} Juned Setiawan S <span class="font-semibold text-primary">Lazy Programmer</span>
           </p>
         </div>
       </div>

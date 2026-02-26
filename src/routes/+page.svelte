@@ -8,8 +8,11 @@
 </script>
 
 <svelte:head>
-  <title>Juned Setiawan - Full Stack Web Developer</title>
-  <meta name="description" content="Personal portfolio of Juned Setiawan, a Full Stack Laravel Developer. Discover my journey, skills, and featured projects." />
+  <title>Juned Setiawan Suyadi - Web Developer</title>
+  <meta name="description" content="Juned Setiawan Suyadi - Web Development Enthusiast" />
+  <meta name="title" content="Juned Setiawan Suyadi" />
+  <meta name="keywords" content="Juned Setiawan, Juned Setiawan Suyadi, Web Development, Web developer, Backend Developer, Laravel Developer, Web App Developer." />
+  <meta name="author" content="Juned Setiawan Suyadi" />
 </svelte:head>
 
 <div class="overflow-x-hidden">

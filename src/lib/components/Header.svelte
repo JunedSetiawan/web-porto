@@ -47,14 +47,16 @@
 
 <header
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 {isScrolled 
-    ? 'backdrop-blur-md bg-base-100/80 border-b border-base-content/10 shadow-lg' 
+    ? 'backdrop-blur-md bg-base-100/80 border-base-content/10 shadow-lg' 
     : 'bg-transparent'}"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <!-- Logo/Name -->
       <div class="flex items-center">
-        <a href="#hero" class="text-xl font-bold gradient-text"> Jun.dev </a>
+        <a href="#hero" class="flex items-center">
+          <img src="/logo.png" alt="Logo" class="h-8 w-auto">
+        </a>
       </div>
 
       <!-- Navigation -->
