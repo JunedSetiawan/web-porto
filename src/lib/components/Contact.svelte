@@ -1,110 +1,107 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { fade, fly } from "svelte/transition";
+	import Icon from './Icon.svelte';
+	import { profile } from '#lib/data.ts';
 
-  let visible = $state(false);
-  let sectionRef: HTMLElement;
+	let copied = $state(false);
+	let timer: ReturnType<typeof setTimeout>;
 
-  onMount(() => {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        visible = true;
-        observer.disconnect();
-      }
-    }, { threshold: 0.2 });
+	async function copyEmail() {
+		try {
+			await navigator.clipboard.writeText(profile.email);
+			copied = true;
+			clearTimeout(timer);
+			timer = setTimeout(() => (copied = false), 2000);
+		} catch {
+			location.href = `mailto:${profile.email}`;
+		}
+	}
 
-    if (sectionRef) {
-      observer.observe(sectionRef);
-    }
-    return () => observer.disconnect();
-  });
+	const channels = [
+		{ label: 'Email', value: profile.email, href: `mailto:${profile.email}`, icon: 'mail' },
+		{
+			label: 'WhatsApp',
+			value: profile.whatsapp.display,
+			href: profile.whatsapp.url,
+			icon: 'whatsapp'
+		},
+		{ label: 'Location', value: profile.location, href: undefined, icon: 'map-pin' }
+	] as const;
 </script>
 
-<section id="contact" class="relative py-0 overflow-hidden" bind:this={sectionRef}>
-  <!-- Background decoration -->
-  <div class="absolute inset-0 -z-10">
-    <div class="absolute top-1/4 right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 left-10 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></div>
-  </div>
+<section id="contact" class="section isolate overflow-hidden">
+	<div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+		<div
+			class="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_60%_55%_at_50%_45%,black_10%,transparent_70%)]"
+		></div>
+		<div
+			class="absolute top-1/4 left-1/2 h-96 w-4xl -translate-x-1/2 animate-aurora rounded-full bg-accent/15 blur-[140px]"
+		></div>
+	</div>
 
-  <div class="section-padding">
-    <div class="max-w-6xl mx-auto">
-      <!-- Section Header -->
-      {#if visible}
-        <div class="text-center mb-16" in:fade={{ duration: 800 }}>
-          <div class="inline-block mb-4">
-            <span class="px-4 py-2 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20">
-              Get In Touch
-            </span>
-          </div>
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            Let's Work <span class="gradient-text">Together</span>
-          </h2>
-          <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? I'm always excited to discuss new projects and opportunities. Let's create something amazing together.
-          </p>
-          <div class="w-24 h-1 bg-primary mx-auto rounded-full mt-6"></div>
-        </div>
+	<div class="container-wide">
+		<div class="mx-auto max-w-4xl text-center">
+			<p class="eyebrow justify-center" data-reveal>Contact</p>
+			<h2
+				class="mt-6 text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-7xl md:leading-[1.02]"
+				data-reveal
+				style="--d: 100ms"
+			>
+				Let's build something <span class="text-accent-gradient">great together.</span>
+			</h2>
+			<p
+				class="mx-auto mt-6 max-w-xl text-lg text-pretty text-muted"
+				data-reveal
+				style="--d: 200ms"
+			>
+				Ready to bring your ideas to life? I'm always excited to discuss new projects and
+				opportunities.
+			</p>
 
-        <div class="grid lg:grid-cols-1 gap-16 items-start justify-center">
-          <!-- Contact Information -->
-          <div class="space-y-8 max-w-4xl mx-auto w-full">
-            <div class="space-y-4">
-              <h3 class="text-2xl font-bold mb-6 flex items-center" in:fly={{ x: -30, duration: 800, delay: 200 }}>
-                <div class="w-2 h-8 bg-secondary rounded-full mr-4"></div>
-                Contact Information
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
-                <!-- Email Card -->
-                <a href="mailto:junedhayko502@gmail.com" class="block glass-card rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:scale-105 group" in:fly={{ y: 30, duration: 600, delay: 300 }}>
-                  <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center group-hover:bg-secondary/30 transition-colors duration-300">
-                      <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div class="min-w-0 flex-1">
-                      <h4 class="font-semibold text-base-content group-hover:text-primary transition-colors duration-300">Email Address</h4>
-                      <p class="text-base-content/70 text-sm md:text-base truncate">junedhayko502@gmail.com</p>
-                    </div>
-                  </div>
-                </a>
+			<div class="mt-10 flex flex-wrap justify-center gap-3" data-reveal style="--d: 300ms">
+				<a href="mailto:{profile.email}" class="btn btn-primary group">
+					<Icon name="mail" class="size-4" />
+					Send an email
+					<Icon name="arrow-right" class="size-4 transition-transform group-hover:translate-x-1" />
+				</a>
+				<button type="button" class="btn btn-ghost" onclick={copyEmail}>
+					<Icon
+						name={copied ? 'check' : 'copy'}
+						class="size-4 {copied ? 'text-emerald-400' : ''}"
+					/>
+					{copied ? 'Copied!' : 'Copy email'}
+				</button>
+			</div>
+		</div>
 
-                <!-- Phone Card -->
-                <a href="https://wa.me/082365265904" target="_blank" class="block glass-card rounded-xl p-6 hover:border-secondary/50 transition-all duration-300 hover:scale-105 group" in:fly={{ y: 30, duration: 600, delay: 400 }}>
-                  <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center group-hover:bg-secondary/30 transition-colors duration-300">
-                      <svg class="h-6 w-6 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
-                      </svg>
-                    </div>
-                    <div class="min-w-0 flex-1">
-                      <h4 class="font-semibold text-base-content group-hover:text-secondary transition-colors duration-300">WhatsApp</h4>
-                      <p class="text-base-content/70 text-sm md:text-base truncate">+62 823-6526-5904</p>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- Location Card -->
-                <div class="glass-card rounded-xl p-6" in:fly={{ y: 30, duration: 600, delay: 500 }}>
-                  <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
-                      <svg class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div class="min-w-0 flex-1">
-                      <h4 class="font-semibold text-base-content">Location</h4>
-                      <p class="text-base-content/70 text-sm md:text-base truncate">Indonesia</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      {/if}
-    </div>
-  </div>
+		<div class="mt-20 grid gap-4 md:grid-cols-3">
+			{#each channels as channel, i (channel.label)}
+				<div data-reveal style="--d: {400 + i * 100}ms">
+					<svelte:element
+						this={channel.href ? 'a' : 'div'}
+						href={channel.href}
+						target={channel.href?.startsWith('http') ? '_blank' : undefined}
+						rel={channel.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+						class="card spotlight group flex h-full items-center gap-4 p-6 backdrop-blur"
+						data-spotlight
+					>
+						<span
+							class="grid size-12 shrink-0 place-items-center rounded-xl border border-line bg-elevated text-muted transition-colors duration-300 group-hover:text-accent"
+						>
+							<Icon name={channel.icon} class="size-5" />
+						</span>
+						<span class="min-w-0 grow text-left">
+							<span class="block text-xs text-subtle">{channel.label}</span>
+							<span class="block truncate font-medium">{channel.value}</span>
+						</span>
+						{#if channel.href}
+							<Icon
+								name="arrow-up-right"
+								class="size-5 shrink-0 text-subtle transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-fg"
+							/>
+						{/if}
+					</svelte:element>
+				</div>
+			{/each}
+		</div>
+	</div>
 </section>

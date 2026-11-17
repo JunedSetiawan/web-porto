@@ -1,176 +1,191 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+	import { flushSync, onMount } from 'svelte';
+	import { crossfade, fly } from 'svelte/transition';
+	import { expoOut } from 'svelte/easing';
+	import Icon from './Icon.svelte';
+	import { navItems } from '#lib/data.ts';
 
-  let isMenuOpen = $state(false);
-  let isScrolled = $state(false);
-  let isDarkMode = $state(true);
+	const [send, receive] = crossfade({ duration: 500, easing: expoOut });
 
-  // Initialize theme based on document class or default to dark
-  onMount(() => {
-    isDarkMode = document.documentElement.classList.contains('dark') || 
-                 (!document.documentElement.classList.contains('light') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    applyTheme();
-  });
+	let menuOpen = $state(false);
+	let scrolled = $state(false);
+	let progress = $state(0);
+	let active = $state('');
+	let dark = $state(true);
 
-  function toggleTheme() {
-    isDarkMode = !isDarkMode;
-    applyTheme();
-  }
+	onMount(() => {
+		dark = document.documentElement.classList.contains('dark');
 
-  function applyTheme() {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
-    } else {
-      document.documentElement.classList.add('light');
-      document.documentElement.classList.remove('dark');
-    }
-  }
+		let ticking = false;
+		const update = () => {
+			const max = document.documentElement.scrollHeight - innerHeight;
+			scrolled = scrollY > 24;
+			progress = max > 0 ? Math.min(1, scrollY / max) : 0;
+			ticking = false;
+		};
+		const onScroll = () => {
+			if (ticking) return;
+			ticking = true;
+			requestAnimationFrame(update);
+		};
+		update();
+		addEventListener('scroll', onScroll, { passive: true });
+		addEventListener('resize', onScroll, { passive: true });
 
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-  }
+		// Scrollspy: highlight the section crossing the middle of the viewport.
+		const io = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) if (entry.isIntersecting) active = entry.target.id;
+			},
+			{ rootMargin: '-45% 0px -50% 0px' }
+		);
+		for (const id of ['hero', ...navItems.map((n) => n.id)]) {
+			const el = document.getElementById(id);
+			if (el) io.observe(el);
+		}
 
-  function closeMenu() {
-    isMenuOpen = false;
-  }
+		return () => {
+			removeEventListener('scroll', onScroll);
+			removeEventListener('resize', onScroll);
+			io.disconnect();
+		};
+	});
 
-  // Add scroll listener to make header glassy when scrolled
-  onMount(() => {
-    const handleScroll = () => {
-      isScrolled = window.scrollY > 20;
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+	function applyTheme(next: boolean) {
+		dark = next;
+		document.documentElement.classList.toggle('dark', next);
+		try {
+			localStorage.setItem('theme', next ? 'dark' : 'light');
+		} catch {
+			// storage unavailable (private mode) — theme still applies for this visit
+		}
+	}
+
+	function toggleTheme(event: MouseEvent) {
+		const next = !dark;
+		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (!('startViewTransition' in document) || reduce) {
+			applyTheme(next);
+			return;
+		}
+		// Circular reveal of the new theme, growing from the toggle button.
+		const x = event.clientX || innerWidth - 48;
+		const y = event.clientY || 40;
+		const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+		const transition = document.startViewTransition(() => flushSync(() => applyTheme(next)));
+		transition.ready.then(() => {
+			document.documentElement.animate(
+				{
+					clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`]
+				},
+				{
+					duration: 700,
+					easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+					pseudoElement: '::view-transition-new(root)'
+				}
+			);
+		});
+	}
 </script>
 
+<div
+	class="fixed inset-x-0 top-0 z-60 h-0.5 origin-left bg-linear-to-r from-accent to-accent-2"
+	style="transform: scaleX({progress})"
+	aria-hidden="true"
+></div>
+
 <header
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 {isScrolled 
-    ? 'backdrop-blur-md bg-base-100/80 border-base-content/10 shadow-lg' 
-    : 'bg-transparent'}"
+	class="fixed inset-x-0 top-0 z-50 transition-[padding] duration-500 {scrolled ? 'pt-3' : 'pt-5'}"
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      <!-- Logo/Name -->
-      <div class="flex items-center">
-        <a href="#hero" class="flex items-center">
-          <img src="/logo.png" alt="Logo" class="h-8 w-auto">
-        </a>
-      </div>
+	<div class="container-wide">
+		<div
+			class="flex h-14 items-center justify-between gap-4 rounded-full border pr-2 pl-4 transition-all duration-500 {scrolled ||
+			menuOpen
+				? 'border-line bg-bg/70 shadow-xl shadow-black/5 backdrop-blur-xl'
+				: 'border-transparent'}"
+		>
+			<a href="#hero" class="flex items-center gap-2.5" aria-label="Back to top">
+				<img src="/logo.png" alt="" class="h-7 w-auto" />
+			</a>
 
-      <!-- Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a
-          href="#about"
-          class="text-base-content/70 hover:text-primary transition-colors duration-300 font-medium"
-        >
-          About
-        </a>
-        <a
-          href="#education"
-          class="text-base-content/70 hover:text-primary transition-colors duration-300 font-medium"
-        >
-          Education & Experience
-        </a>
-        <a
-          href="#skill"
-          class="text-base-content/70 hover:text-primary transition-colors duration-300 font-medium"
-        >
-          Skills
-        </a>
-        <a
-          href="#portfolio"
-          class="text-base-content/70 hover:text-primary transition-colors duration-300 font-medium"
-        >
-          Portfolio
-        </a>
-        <a
-          href="#contact"
-          class="text-base-content/70 hover:text-primary transition-colors duration-300 font-medium"
-        >
-          Contact
-        </a>
-      </nav>
+			<nav class="hidden md:block" aria-label="Primary">
+				<ul class="flex items-center gap-1">
+					{#each navItems as item (item.id)}
+						<li>
+							<a
+								href="#{item.id}"
+								class="relative isolate block rounded-full px-4 py-2 text-sm transition-colors duration-300 {active ===
+								item.id
+									? 'text-fg'
+									: 'text-muted hover:text-fg'}"
+								aria-current={active === item.id ? 'true' : undefined}
+							>
+								{#if active === item.id}
+									<span
+										class="absolute inset-0 -z-10 rounded-full border border-line bg-elevated"
+										in:receive={{ key: 'nav' }}
+										out:send={{ key: 'nav' }}
+									></span>
+								{/if}
+								{item.label}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</nav>
 
-      <!-- Theme Toggle & Mobile Menu -->
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <!-- Theme Toggle Button -->
-        <button
-          class="p-2 rounded-lg hover:bg-base-200 text-base-content/80 hover:text-primary transition-colors duration-300"
-          onclick={toggleTheme}
-          aria-label="Toggle theme"
-        >
-          {#if isDarkMode}
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-          {:else}
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-          {/if}
-        </button>
+			<div class="flex items-center gap-1.5">
+				<button
+					type="button"
+					class="grid size-10 place-items-center overflow-hidden rounded-full text-muted transition-colors hover:bg-elevated hover:text-fg"
+					onclick={toggleTheme}
+					aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+				>
+					{#key dark}
+						<span
+							class="col-start-1 row-start-1"
+							in:fly={{ y: 14, duration: 450, easing: expoOut }}
+						>
+							<Icon name={dark ? 'sun' : 'moon'} class="size-[18px]" />
+						</span>
+					{/key}
+				</button>
 
-        <!-- Mobile Menu Button -->
-        <button
-          class="p-2 rounded-lg hover:bg-base-200 transition-colors md:hidden"
-          onclick={toggleMenu}
-          aria-label="Toggle mobile menu"
-        >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {#if isMenuOpen}
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            {:else}
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            {/if}
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
+				<a href="#contact" class="btn btn-primary hidden h-10 px-5 sm:inline-flex">Let's talk</a>
 
-  <!-- Mobile Navigation -->
-  <div
-    class="md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-base-100 border-t border-base-content/10"
-    style="max-height: {isMenuOpen ? '300px' : '0'}; opacity: {isMenuOpen ? '1' : '0'};"
-  >
-    <div class="px-4 py-2 space-y-1">
-      <a
-        href="#about"
-        class="block px-3 py-2 text-base-content/70 hover:text-primary hover:bg-base-200 rounded-lg transition-colors"
-        onclick={closeMenu}
-      >
-        About
-      </a>
-      <a
-        href="#education"
-        class="block px-3 py-2 text-base-content/70 hover:text-primary hover:bg-base-200 rounded-lg transition-colors"
-        onclick={closeMenu}
-      >
-        Education
-      </a>
-      <a
-        href="#skill"
-        class="block px-3 py-2 text-base-content/70 hover:text-primary hover:bg-base-200 rounded-lg transition-colors"
-        onclick={closeMenu}
-      >
-        Skills
-      </a>
-      <a
-        href="#portfolio"
-        class="block px-3 py-2 text-base-content/70 hover:text-primary hover:bg-base-200 rounded-lg transition-colors"
-        onclick={closeMenu}
-      >
-        Portfolio
-      </a>
-      <a
-        href="#contact"
-        class="block px-3 py-2 text-base-content/70 hover:text-primary hover:bg-base-200 rounded-lg transition-colors"
-        onclick={closeMenu}
-      >
-        Contact
-      </a>
-    </div>
-  </div>
+				<button
+					type="button"
+					class="grid size-10 place-items-center rounded-full text-muted transition-colors hover:bg-elevated hover:text-fg md:hidden"
+					onclick={() => (menuOpen = !menuOpen)}
+					aria-label="Toggle menu"
+					aria-expanded={menuOpen}
+				>
+					<Icon name={menuOpen ? 'x' : 'menu'} />
+				</button>
+			</div>
+		</div>
+
+		{#if menuOpen}
+			<nav
+				class="mt-2 rounded-3xl border border-line bg-bg/90 p-2 shadow-2xl shadow-black/10 backdrop-blur-xl md:hidden"
+				aria-label="Mobile"
+				transition:fly={{ y: -10, duration: 350, easing: expoOut }}
+			>
+				{#each navItems as item, i (item.id)}
+					<a
+						href="#{item.id}"
+						class="flex items-center justify-between rounded-2xl px-4 py-3.5 text-lg transition-colors hover:bg-elevated {active ===
+						item.id
+							? 'text-fg'
+							: 'text-muted'}"
+						onclick={() => (menuOpen = false)}
+						in:fly={{ y: 10, duration: 400, delay: 40 * i, easing: expoOut }}
+					>
+						{item.label}
+						<Icon name="arrow-up-right" class="size-4 text-subtle" />
+					</a>
+				{/each}
+			</nav>
+		{/if}
+	</div>
 </header>
